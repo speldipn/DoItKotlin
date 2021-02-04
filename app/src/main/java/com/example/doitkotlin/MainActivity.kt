@@ -100,6 +100,10 @@ class MainActivity : AppCompatActivity() {
         ((0 until n) + (n downTo 0)).forEach {
 //            debug("${" ".repeat(n - it)}*${"*".repeat(2 * it)}")
         }
+
+        ((0 until 2) + (2 downTo 0)).forEach {
+            debug("${it}")
+        }
     }
 
     private fun ifTest() {
