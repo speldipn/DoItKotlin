@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import java.lang.Exception
+import java.util.*
 import java.util.concurrent.locks.ReentrantLock
 
 //import com.example.doitkotlin.test.Person
@@ -88,11 +89,16 @@ class MainActivity : AppCompatActivity() {
             }
 
             textView.append("${line}\n")
-            debug(line)
+//            debug(line)
 
             if (i == 2) {
                 isReserve = true
             }
+        }
+
+        val n = 2
+        ((0 until n) + (n downTo 0)).forEach {
+//            debug("${" ".repeat(n - it)}*${"*".repeat(2 * it)}")
         }
     }
 
