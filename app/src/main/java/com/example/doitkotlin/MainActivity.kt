@@ -35,7 +35,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setup() {
+        infixFunctionTest()
+    }
 
+    private fun infixFunctionTest() {
+        infix fun Int.multiply(a: Int) =  this * a
+
+        val result = 3 multiply 3
+        debug("result: ${result}")
     }
 
     private fun anonymousFuntionTest() {
@@ -44,6 +51,18 @@ class MainActivity : AppCompatActivity() {
         debug("add(10,2): ${add(10, 2)}, sum(1,3):${sum(1, 3)}")
         val add2 = { a: Int, b: Int -> a + b }
         debug("${add2(30, 4)}")
+        val person = Person("Anne")
+        val name = "Neo"
+        val age = 34
+        val isAdult = true
+//        person.printSpdn()
+//        name.printSpdn()
+        age.printSpdn()
+        isAdult.printSpdn()
+    }
+
+    fun Any.printSpdn() {
+        debug("print spdn")
     }
 
     private fun lambdaThreadTest() {
@@ -303,5 +322,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun debug(msg: String) {
         Log.d(TAG, msg)
+    }
+
+    inner class Person(val name: String) {
+        fun printName() {
+            debug("$name")
+        }
     }
 }
