@@ -22,8 +22,28 @@ class MainActivity : AppCompatActivity() {
         setup()
     }
 
+    private inline fun inlineSubFunction(a: Int, out: (x: Int) -> Unit) {
+        debug("Before function call")
+        out(a)
+        debug("After function call")
+    }
+
+    private fun inlineFunctionTest() {
+        inlineSubFunction(10) { a -> debug("$a") }
+        inlineSubFunction(20) { a -> debug("$a") }
+        inlineSubFunction(30, fun(x) = debug("$x"))
+    }
+
     private fun setup() {
-        lambdaThreadTest()
+
+    }
+
+    private fun anonymousFuntionTest() {
+        val sum = fun(x: Int, y: Int): Int = x + y
+        val add: (Int, Int) -> Int = fun(a, b) = a + b
+        debug("add(10,2): ${add(10, 2)}, sum(1,3):${sum(1, 3)}")
+        val add2 = { a: Int, b: Int -> a + b }
+        debug("${add2(30, 4)}")
     }
 
     private fun lambdaThreadTest() {
