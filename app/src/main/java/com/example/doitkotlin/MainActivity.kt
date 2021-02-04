@@ -3,6 +3,7 @@ package com.example.doitkotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import java.lang.Exception
 import java.util.concurrent.locks.ReentrantLock
 
@@ -12,6 +13,8 @@ typealias Username = String
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var textView: TextView
+
     companion object {
         val TAG = "SPDN"
     }
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        textView = findViewById(R.id.textView)
         setup()
     }
 
@@ -35,11 +39,78 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        infixFunctionTest()
+        forLoopTest()
+    }
+
+    private fun forLoopTest() {
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+        for (i in 4 downTo 0) {
+            var star = ""
+            for (j in 0..i) {
+                star += "*"
+            }
+            textView.append("$star\n")
+        }
+        textView.append("\n\n")
+
+        //  *
+        // ***
+        //*****
+        // ***
+        //  *
+        var isReserve = false
+        var starCount = 0
+        var skipCount = 0
+        val max = 5
+        for (i in 0 until max) {
+            var line = ""
+
+            if (!isReserve) {
+                starCount = 2 * (i + 1) - 1
+                skipCount =  2 - i
+            } else {
+                starCount = 2 * (max - i) - 1
+                skipCount = (i + 1) - 3
+            }
+
+            // skip space
+            for (j in 0 until skipCount) {
+                line += " "
+            }
+
+            // add star
+            for (j in 0 until starCount) {
+                line += "*"
+            }
+
+            textView.append("${line}\n")
+            debug(line)
+
+            if (i == 2) {
+                isReserve = true
+            }
+        }
+    }
+
+    private fun ifTest() {
+        val score = 59.9
+        var grade: Char? = null
+        if (score >= 90) {
+            grade = 'A'
+        } else if (score in 80.0..89.9) {
+            grade = 'B'
+        } else if (score in 69.0..79.9) {
+            grade = 'C'
+        }
+        debug("Grade:${grade ?: 'D'}")
     }
 
     private fun infixFunctionTest() {
-        infix fun Int.multiply(a: Int) =  this * a
+        infix fun Int.multiply(a: Int) = this * a
 
         val result = 3 multiply 3
         debug("result: ${result}")
