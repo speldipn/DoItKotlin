@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         ((0 until 2) + (2 downTo 0)).forEach {
-            debug("${it}")
+//            debug("${it}")
         }
     }
 
