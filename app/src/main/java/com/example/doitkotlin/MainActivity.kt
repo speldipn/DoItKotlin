@@ -42,8 +42,10 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
 //        val classExample = ClassExample()
 //        classExample.runExample()
-        val classThisExample = ClassThisExample()
-        classThisExample.runExample()
+//        val classThisExample = ClassThisExample()
+//        classThisExample.runExample()
+        val interfaceExample = InterfaceExample()
+        interfaceExample.runExample()
     }
 
     private fun forLoopTest() {
