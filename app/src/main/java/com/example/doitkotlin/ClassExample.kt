@@ -7,23 +7,18 @@ class ClassExample {
     fun runExample() {
         val coco = Bird("mybird", 2, "short", "blue")
 
-        coco.color = "yellow"
-        debug("coco.color: ${coco.color}")
+        debug("${coco.name} ${coco.beak}")
+
         coco.fly()
         coco.sing(3)
     }
 
-    inner class Bird {
-        var name: String
-        var wing: Int
-        var beak: String
-        var color: String
-
-        constructor(name: String, wing: Int, beak: String, color: String) {
-            this.name = name
-            this.wing = wing
-            this.beak = beak
-            this.color = color
+    inner class Bird(val name: String, val wing: Int, val beak: String, val color: String) {
+        init {
+            debug("Start of init")
+            debug("$name $beak $color")
+            this.sing(3)
+            debug("End of init")
         }
 
         fun fly() = debug("Fly wing: $wing")
