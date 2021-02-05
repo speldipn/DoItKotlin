@@ -20,7 +20,7 @@ class ClassExample {
 
     open inner class Bird(val name: String, val wing: Int, val beak: String, val color: String) {
 
-        fun fly() = debug("Fly wing: $wing")
+        open fun fly() = debug("Fly wing: $wing")
         fun sing(vol: Int) = debug("Sing vol: $vol")
     }
 
@@ -31,6 +31,9 @@ class ClassExample {
         color: String
     ) : Bird(name, wing, beak, color) {
         fun singHitone() = debug("Happy Song!")
+        override fun fly() {
+            debug("Lark fly wing: $wing")
+        }
     }
 
     inner class Parrot : Bird {
@@ -47,6 +50,9 @@ class ClassExample {
         }
 
         fun speak() = debug("Speak! $language")
+        override fun fly() {
+            debug("Parrot fly wing: $wing")
+        }
     }
 
     private fun debug(msg: String) {
