@@ -6,23 +6,47 @@ class ClassExample {
 
     fun runExample() {
         val coco = Bird("mybird", 2, "short", "blue")
+        val lark = Lark("mylark", 2, "long", "brown")
+        val parrot = Parrot("myparrot", 2, "short", "multiple", "korean")
 
-        debug("${coco.name} ${coco.beak}")
+        debug("Coco: ${coco.name} ${coco.wing} ${coco.beak} ${coco.color}")
+        debug("Lark: ${lark.name} ${lark.wing} ${lark.beak} ${lark.color}")
+        debug("Parrot: ${parrot.name} ${parrot.wing} ${parrot.beak} ${parrot.color} ${parrot.language}")
 
-        coco.fly()
-        coco.sing(3)
+        lark.singHitone()
+        parrot.speak()
+        lark.fly()
     }
 
-    inner class Bird(val name: String, val wing: Int, val beak: String, val color: String) {
-        init {
-            debug("Start of init")
-            debug("$name $beak $color")
-            this.sing(3)
-            debug("End of init")
-        }
+    open inner class Bird(val name: String, val wing: Int, val beak: String, val color: String) {
 
         fun fly() = debug("Fly wing: $wing")
         fun sing(vol: Int) = debug("Sing vol: $vol")
+    }
+
+    inner class Lark(
+        name: String,
+        wing: Int,
+        beak: String,
+        color: String
+    ) : Bird(name, wing, beak, color) {
+        fun singHitone() = debug("Happy Song!")
+    }
+
+    inner class Parrot : Bird {
+        val language: String
+
+        constructor(
+            name: String,
+            wing: Int,
+            beak: String,
+            color: String,
+            language: String
+        ) : super(name, wing, beak, color) {
+            this.language = language
+        }
+
+        fun speak() = debug("Speak! $language")
     }
 
     private fun debug(msg: String) {
