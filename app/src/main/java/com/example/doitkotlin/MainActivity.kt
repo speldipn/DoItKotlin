@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         setup()
     }
 
-<<<<<<< HEAD
     // private, default, public, internal
     private fun setup() {
         // var car = Car()
@@ -119,7 +118,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(MainActivity.TAG, "Nothing to steal")
             }
         }
-=======
+    }
     private inline fun inlineSubFunction(a: Int, out: (x: Int) -> Unit) {
         debug("Before function call")
         out(a)
@@ -130,15 +129,6 @@ class MainActivity : AppCompatActivity() {
         inlineSubFunction(10) { a -> debug("$a") }
         inlineSubFunction(20) { a -> debug("$a") }
         inlineSubFunction(30, fun(x) = debug("$x"))
-    }
-
-    private fun setup() {
-//        val classExample = ClassExample()
-//        classExample.runExample()
-//        val classThisExample = ClassThisExample()
-//        classThisExample.runExample()
-        val interfaceExample = InterfaceExample()
-        interfaceExample.runExample()
     }
 
     private fun forLoopTest() {
@@ -497,7 +487,6 @@ class MainActivity : AppCompatActivity() {
         debug("Long min: ${Long.MIN_VALUE} max: ${Long.MAX_VALUE}")
         debug("Float min: ${Float.MIN_VALUE} max: ${Float.MAX_VALUE}")
         debug("Double min: ${Double.MIN_VALUE} max: ${Double.MAX_VALUE}")
->>>>>>> 8e9cfe14642540cedeaae65ee3336f0430e27c48
     }
 
     private fun debug(msg: String) {
