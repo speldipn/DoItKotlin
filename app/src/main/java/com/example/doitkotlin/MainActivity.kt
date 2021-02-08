@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 
+import kotlin.properties.Delegates
+import kotlin.system.measureNanoTime
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,30 +26,57 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
-        val myDamas = CarModel("Damas 2010", VanImpl("100hp"))
-        val my350z = CarModel("350Z 2008", SportImpl("350hp"))
-
-        myDamas.carInfo()
-        my350z.carInfo()
-    }
-
-    interface Car {
-        fun go(): String
-    }
-
-    inner class VanImpl(val power: String) : Car {
-        override fun go(): String = "go of VanImple have $power power"
-    }
-
-    inner class SportImpl(val power: String) : Car {
-        override fun go(): String = "For racing have $power power"
-    }
-
-    inner class CarModel(val model: String, impl: Car): Car by impl {
-        fun carInfo() {
-            debug("$model ${go()}")
+        var data: List<Any> by Delegates.vetoable(listOf()) {
+            prop, old, new ->
         }
     }
+
+    private fun runVetoableExample() {
+        var max: Int by Delegates.vetoable(0) {
+                prop, old, new->
+            new > old
+        }
+
+        debug("$max")
+        max = 10
+        debug("$max")
+
+        max = 11
+        debug("$max")
+    }
+
+//    inner class User {
+//        var name: String by Delegates.observable("NONAME") {
+//            property, oldValue, newValue ->
+//            debug("$oldValue -> $newValue")
+//        }
+//    }
+
+//    interface Car {
+//        fun go(): String
+//
+//        fun main() {
+//            val myDamas = CarModel("Damas 2010", VanImpl("100hp"))
+//            val my350z = CarModel("350Z 2008", SportImpl("350hp"))
+//
+//            myDamas.carInfo()
+//            my350z.carInfo()
+//        }
+//    }
+//
+//    inner class VanImpl(val power: String) : Car {
+//        override fun go(): String = "go of VanImple have $power power"
+//    }
+//
+//    inner class SportImpl(val power: String) : Car {
+//        override fun go(): String = "For racing have $power power"
+//    }
+//
+//    inner class CarModel(val model: String, impl: Car): Car by impl {
+//        fun carInfo() {
+//            debug("$model ${go()}")
+//        }
+//    }
 
 //    private fun runDelegateExample() {
 //        val cat = Cat()
