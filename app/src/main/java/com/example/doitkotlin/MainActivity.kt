@@ -30,6 +30,29 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+    }
+
+    private fun runLateinitExample() {
+        val kildong = Person1()
+        kildong.test()
+        kildong.name = "Kildong"
+        kildong.test()
+        debug("name = ${kildong.name}")
+    }
+
+
+    inner class Person1 {
+        lateinit var name: String
+        fun test() {
+            if(::name.isInitialized) {
+                debug("Not initialized")
+            }else {
+                debug("initialized")
+            }
+        }
+    }
+
+    private fun runFakeAgeExample() {
         val kim = FakeAge()
         kim.age = 15
         debug("Kim's real age = 15, pretended age = ${kim.age}")
