@@ -1,12 +1,10 @@
+@file:JvmName("PKLevel")
 package com.example.doitkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-
-import kotlin.properties.Delegates
-import kotlin.system.measureNanoTime
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +25,37 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     private fun setup() {
     }
+
+//    private fun runCompanionExample() {
+//        OCustomer.greeting()
+//        OCustomer.name = "Dooly"
+//        debug("name = ${OCustomer.name}")
+//        debug(OCustomer.HOBBY.name)
+//
+//        CCustomer.greeting()
+//        debug("name = ${CCustomer.name}, HELLO = ${CCustomer.HELLO}")
+//        debug(CCustomer.HOBBY.name)
+//    }
+//
+//    object OCustomer {
+//        var name = "Kildong"
+//        fun greeting() = Log.d(TAG, "Hello world!")
+//        val HOBBY = Hobby("Basketball")
+//        init {
+//            Log.d(TAG, "init!")
+//        }
+//    }
+//
+//    class CCustomer {
+//        companion object {
+//            const val HELLO = "hello"
+//            var name = "Joosol"
+//            @JvmField val HOBBY = Hobby("Football")
+//            @JvmStatic fun greeting() = Log.d(TAG, "Hello world!")
+//        }
+//    }
+//
+//    class Hobby(val name: String)
 
 //    private fun runStaticExample() {
 //        debug(Person.language)
