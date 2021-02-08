@@ -24,6 +24,39 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+        val pretendedMan = object: Superman() {
+            override fun fly() {
+                debug("I'm not a real superman. I cant' fly!")
+            }
+        }
+        pretendedMan.work()
+        pretendedMan.talk()
+        pretendedMan.fly()
+
+        val test = C()
+
+        fun foo() {
+            val adHoc = object {
+                var x: Int = 0
+                var y: Int = 0
+            }
+            debug("${adHoc.x + adHoc.y}")
+        }
+    }
+
+    class C {
+        private fun foo() = object { val x: String = "x" }
+        fun publicFoo() = object { val x: String = "x"}
+        fun bar() {
+            val x1 = foo().x // anonymous class, possible access to props
+//            val x2 = publicFoo() // Any class No possible access to props
+        }
+    }
+
+    open inner class Superman {
+        fun work() = debug("Taking photos")
+        fun talk() = debug("Talking with people")
+        open fun fly() = debug("Flying in the air.")
     }
 
 //    private fun runCompanionExample() {
