@@ -30,6 +30,25 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+        val lazyTest = LazyTest()
+        lazyTest.flow()
+    }
+
+    inner class LazyTest {
+        init {
+            debug("init block")
+        }
+
+        val subject by lazy {
+            debug("lazy initialzied")
+            "Kotlin programming"
+        }
+
+        fun flow() {
+            debug("Not initialized")
+            debug("subject one: $subject")
+            debug("subject two: $subject")
+        }
     }
 
     private fun runLateinitExample() {
@@ -39,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         kildong.test()
         debug("name = ${kildong.name}")
     }
-
 
     inner class Person1 {
         lateinit var name: String
