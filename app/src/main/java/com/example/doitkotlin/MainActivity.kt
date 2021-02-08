@@ -24,6 +24,30 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+        val master = Master()
+        val dog = Dog("Toto", "Small")
+        val cat = Cat("Coco", "BigFat")
+        master.playWithPet(dog)
+        master.playWithPet(cat)
+    }
+
+    open class Animal(val name: String)
+
+    class Dog(name: String, override var category: String): Pet, Animal(name) {
+        override fun feeding() {
+            Log.d(TAG, "Feed the dog a bone")
+        }
+    }
+
+    class Master {
+        fun playWithPet(dog: Dog) {
+            Log.d(TAG, "Enjoy with my dog.")
+            dog.feeding()
+        }
+        fun playWithPet(cat: Cat) {
+            Log.d(TAG, "Enjoy with my cat.")
+            cat.feeding()
+        }
     }
 
 //    private fun runInterfaceExample() {
@@ -33,19 +57,19 @@ class MainActivity : AppCompatActivity() {
 //        obj.patting() // Keep patting
 //    }
 //
-//    interface Pet {
-//        var category: String
-//        fun feeding()
-//        fun patting() {
-//            Log.d(TAG, "Keep patting")
-//        }
-//    }
-//
-//    class Cat(override var category: String): Pet {
-//        override fun feeding() {
-//            Log.d(TAG, "Feed the cat a tuna can!")
-//        }
-//    }
+    interface Pet {
+        var category: String
+        fun feeding()
+        fun patting() {
+            Log.d(TAG, "Keep patting")
+        }
+    }
+
+    class Cat(name: String, override var category: String): Pet, Animal(name) {
+        override fun feeding() {
+            Log.d(TAG, "Feed the cat a tuna can!")
+        }
+    }
 
 //    private fun runObjectExpressionExample() {
 //        val pretendedMan = object: Superman() {
