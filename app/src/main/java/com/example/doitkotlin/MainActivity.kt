@@ -29,22 +29,31 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
-        val carPropertyClass = CarPropertyClass()
-        carPropertyClass.power = 20
-        debug("main: power=${carPropertyClass.power}")
+        var user1 = User(1, "Kildong", 30)
+        // user1.id = 2
+        user1.name = "Neo"
+        debug("user1.name = ${user1.name}")
+
+        user1.age = 35
+        debug("user1.age = ${user1.age}")
+
     }
 
-    inner class CarPropertyClass {
-        var power: Int
+    inner class User(_id: Int, _name: String, _age: Int) {
+        val id: Int = _id
+
+        var name: String = _name
             get() {
-                debug("power getter $power")
-                return power
+                debug("name getter")
+                return field
+            }
+            set(value) {
+                debug("name setter, $value")
+                field = value
             }
 
-            set(value) {
-                debug("power set: $value")
-                power = value
-            }
+        var age: Int = _age
+            get() = field
     }
 
     private fun runCarExample() {
@@ -138,6 +147,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     private inline fun inlineSubFunction(a: Int, out: (x: Int) -> Unit) {
         debug("Before function call")
         out(a)
@@ -179,7 +189,7 @@ class MainActivity : AppCompatActivity() {
 
             if (!isReserve) {
                 starCount = 2 * (i + 1) - 1
-                skipCount =  2 - i
+                skipCount = 2 - i
             } else {
                 starCount = 2 * (max - i) - 1
                 skipCount = (i + 1) - 3
