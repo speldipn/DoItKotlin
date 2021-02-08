@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import java.lang.AssertionError
 import java.lang.Exception
 import java.util.*
 import java.util.concurrent.locks.ReentrantLock
@@ -29,32 +30,52 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
-        var user1 = User(1, "Kildong", 30)
-        // user1.id = 2
-        user1.name = "Neo"
-        debug("user1.name = ${user1.name}")
-
-        user1.age = 35
-        debug("user1.age = ${user1.age}")
-
     }
 
-    inner class User(_id: Int, _name: String, _age: Int) {
-        val id: Int = _id
-
-        var name: String = _name
+    open inner class First {
+        open val x: Int = 0
             get() {
-                debug("name getter")
+                debug("First x")
                 return field
             }
-            set(value) {
-                debug("name setter, $value")
-                field = value
-            }
-
-        var age: Int = _age
-            get() = field
+        val y: Int = 0
     }
+
+    open inner class Second: First() {
+        override val x: Int = 0
+            get() {
+                debug("Second x")
+                return field + 3
+            }
+    }
+
+//    inner class User(_id: Int, _name: String, _age: Int) {
+//        val id: Int = _id
+//        private var tempName: String? = null
+//        var name: String = _name
+//            get() {
+//                if(tempName == null) tempName = "NONAME"
+//                return tempName ?: throw AssertionError("Asserted by others")
+//            }
+//        var age: Int = _age
+//    }
+
+//    inner class User(_id: Int, _name: String, _age: Int) {
+//        val id: Int = _id
+//
+//        var name: String = _name
+//            get() {
+//                debug("name getter")
+//                return field
+//            }
+//            set(value) {
+//                debug("name setter, $value")
+//                field = value
+//            }
+//
+//        var age: Int = _age
+//            get() = field
+//    }
 
     private fun runCarExample() {
         // var car = Car()
