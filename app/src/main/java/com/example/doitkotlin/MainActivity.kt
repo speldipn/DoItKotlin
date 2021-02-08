@@ -1,4 +1,5 @@
 @file:JvmName("PKLevel")
+
 package com.example.doitkotlin
 
 import androidx.appcompat.app.AppCompatActivity
@@ -25,26 +26,87 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
-        val person = Person(StaffName(), Work())
-        Log.d(TAG, person.name)
-        person.run()
+        val coffeeMaker = CoffeeMaker(MyDripCoffeeModule())
+        coffeeMaker.brew()
     }
 
-    class Person(name: Nameable, work: Runnable): Nameable by name, Runnable by work
-
-    interface Nameable {
-        var name: String
+    interface Heater {
+        fun on()
+        fun off()
+        fun isHot(): Boolean
     }
 
-    class StaffName: Nameable {
-        override var name: String = "Sean"
+    class ElectronicHeater(var heating: Boolean = false) : Heater {
+        override fun on() {
+            Log.d(TAG, "[ElictronicHeater] heating...")
+            heating = true
+        }
+
+        override fun off() {
+            heating = false
+        }
+
+        override fun isHot(): Boolean = heating
     }
 
-    class Work: Runnable {
-        override fun run() {
-            Log.d(TAG, "work...")
+    interface Pump {
+        fun pump()
+    }
+
+    class Thermosiphon(heater: Heater) : Pump, Heater by heater {
+        override fun pump() {
+            if (isHot()) {
+                Log.d(TAG, "[Thermosiphon] pumping...")
+            }
         }
     }
+
+
+    interface CoffeeModule {
+        fun getThermosiphon(): Thermosiphon
+    }
+
+    class MyDripCoffeeModule : CoffeeModule {
+        companion object {
+            val elictronicHeater: ElectronicHeater by lazy {
+                ElectronicHeater()
+            }
+        }
+
+        private val _thermosiphon: Thermosiphon by lazy {
+            Thermosiphon(elictronicHeater)
+        }
+
+        override fun getThermosiphon(): Thermosiphon = _thermosiphon
+    }
+
+
+    class CoffeeMaker(val coffeeModule: CoffeeModule) {
+        fun brew() {
+            val theSiphon: Thermosiphon = coffeeModule.getThermosiphon()
+            theSiphon.on()
+            theSiphon.pump()
+            Log.d(TAG, "Coffee, here! Enjoy!~")
+            theSiphon.off()
+        }
+    }
+
+
+//    class Person(name: Nameable, work: Runnable): Nameable by name, Runnable by work
+//
+//    interface Nameable {
+//        var name: String
+//    }
+//
+//    class StaffName: Nameable {
+//        override var name: String = "Sean"
+//    }
+//
+//    class Work: Runnable {
+//        override fun run() {
+//            Log.d(TAG, "work...")
+//        }
+//    }
 
 //    interface A {
 //        fun funtionA()
