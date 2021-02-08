@@ -24,10 +24,28 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
-        // 1. set, field.
-        // 2. lateinit var name: String
-        // 3. object
     }
+
+//    private fun runInterfaceExample() {
+//        val obj = Cat("small")
+//        debug("Pet Categoryy: ${obj.category}") // Pet Category: small
+//        obj.feeding() // Feed the cat a tuna can!
+//        obj.patting() // Keep patting
+//    }
+//
+//    interface Pet {
+//        var category: String
+//        fun feeding()
+//        fun patting() {
+//            Log.d(TAG, "Keep patting")
+//        }
+//    }
+//
+//    class Cat(override var category: String): Pet {
+//        override fun feeding() {
+//            Log.d(TAG, "Feed the cat a tuna can!")
+//        }
+//    }
 
 //    private fun runObjectExpressionExample() {
 //        val pretendedMan = object: Superman() {
