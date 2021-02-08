@@ -29,6 +29,25 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+        val carPropertyClass = CarPropertyClass()
+        carPropertyClass.power = 20
+        debug("main: power=${carPropertyClass.power}")
+    }
+
+    inner class CarPropertyClass {
+        var power: Int
+            get() {
+                debug("power getter $power")
+                return power
+            }
+
+            set(value) {
+                debug("power set: $value")
+                power = value
+            }
+    }
+
+    private fun runCarExample() {
         // var car = Car()
         val tico = Tico("kildong", true)
         tico.access("gotico")
