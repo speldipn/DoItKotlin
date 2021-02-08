@@ -25,71 +25,134 @@ class MainActivity : AppCompatActivity() {
     }
 
     // private, default, public, internal
+    // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val coffeeMaker = CoffeeMaker(MyDripCoffeeModule())
-        coffeeMaker.brew()
+        runDataClassExample()
     }
 
-    interface Heater {
-        fun on()
-        fun off()
-        fun isHot(): Boolean
+    private fun runDataClassExample() {
+//        val cus1 = Customer("Sean", "sean@gmail.com")
+//        val cus2 = Customer("Sean", "sean@gmail.com")
+//
+//        debug("${cus1 == cus2}")
+//        debug("${cus1.equals(cus2)}")
+//        debug("${cus1.hashCode()}, ${cus2.hashCode()}")
+//        debug("${cus1.hashCode() == cus2.hashCode()}")
+//
+//        val cus3 = cus1.copy(name = "Alice")
+//        debug("$cus1")
+//        debug("$cus3")
+//
+//        val (name, email) = cus1
+//        debug("$name, $email")
+//
+//        val (_, email) = cus3
+//        debug(email)
+//
+//        val name2 = cus1.component1()
+//        val email2 = cus1.component2()
+//        debug("name=$name2, email=$email2")
+
+        val cus1 = Customer("Sean", "sean@mail.com")
+//        val cus2 = Customer("Sean", "sean@mail.com")
+//        val bob = Customer("Bob", "bob@mail.com")
+//        val erica = Customer("Erica", "sean@mail.com")
+//
+//        val customers = listOf(cus1, cus2, bob, erica)
+//
+//        for ((name, email) in customers) {
+//            debug("$name, $email")
+//        }
+//
+//        fun myFunc() = Customer("Mickey", "mic@abc.com")
+//        val (name, email) = myFunc()
+//        debug("$name, $email")
+
+        val myLambda = {
+            (nameLa, emailLa): Customer ->
+            debug(nameLa)
+            debug(emailLa)
+        }
+        myLambda(cus1)
     }
 
-    class ElectronicHeater(var heating: Boolean = false) : Heater {
-        override fun on() {
-            Log.d(TAG, "[ElictronicHeater] heating...")
-            heating = true
+    data class Customer(var name: String, var email: String) {
+        var job: String = "Unknown"
+
+        constructor(name: String, email: String, _job: String) : this(name, email) {
+            job = _job
         }
 
-        override fun off() {
-            heating = false
-        }
-
-        override fun isHot(): Boolean = heating
-    }
-
-    interface Pump {
-        fun pump()
-    }
-
-    class Thermosiphon(heater: Heater) : Pump, Heater by heater {
-        override fun pump() {
-            if (isHot()) {
-                Log.d(TAG, "[Thermosiphon] pumping...")
-            }
+        init {
+            // simple logic
         }
     }
 
-
-    interface CoffeeModule {
-        fun getThermosiphon(): Thermosiphon
-    }
-
-    class MyDripCoffeeModule : CoffeeModule {
-        companion object {
-            val elictronicHeater: ElectronicHeater by lazy {
-                ElectronicHeater()
-            }
-        }
-
-        private val _thermosiphon: Thermosiphon by lazy {
-            Thermosiphon(elictronicHeater)
-        }
-
-        override fun getThermosiphon(): Thermosiphon = _thermosiphon
-    }
-
-
-    class CoffeeMaker(val coffeeModule: CoffeeModule) {
-        fun brew() {
-            val theSiphon: Thermosiphon = coffeeModule.getThermosiphon()
-            theSiphon.on()
-            theSiphon.pump()
-            Log.d(TAG, "Coffee, here! Enjoy!~")
-            theSiphon.off()
-        }
-    }
+//    private fun runCoffeeExample() {
+//        val coffeeMaker = CoffeeMaker(MyDripCoffeeModule())
+//        coffeeMaker.brew()
+//    }
+//
+//    interface Heater {
+//        fun on()
+//        fun off()
+//        fun isHot(): Boolean
+//    }
+//
+//    class ElectronicHeater(var heating: Boolean = false) : Heater {
+//        override fun on() {
+//            Log.d(TAG, "[ElictronicHeater] heating...")
+//            heating = true
+//        }
+//
+//        override fun off() {
+//            heating = false
+//        }
+//
+//        override fun isHot(): Boolean = heating
+//    }
+//
+//    interface Pump {
+//        fun pump()
+//    }
+//
+//    class Thermosiphon(heater: Heater) : Pump, Heater by heater {
+//        override fun pump() {
+//            if (isHot()) {
+//                Log.d(TAG, "[Thermosiphon] pumping...")
+//            }
+//        }
+//    }
+//
+//
+//    interface CoffeeModule {
+//        fun getThermosiphon(): Thermosiphon
+//    }
+//
+//    class MyDripCoffeeModule : CoffeeModule {
+//        companion object {
+//            val elictronicHeater: ElectronicHeater by lazy {
+//                ElectronicHeater()
+//            }
+//        }
+//
+//        private val _thermosiphon: Thermosiphon by lazy {
+//            Thermosiphon(elictronicHeater)
+//        }
+//
+//        override fun getThermosiphon(): Thermosiphon = _thermosiphon
+//    }
+//
+//
+//    class CoffeeMaker(val coffeeModule: CoffeeModule) {
+//        fun brew() {
+//            val theSiphon: Thermosiphon = coffeeModule.getThermosiphon()
+//            theSiphon.on()
+//            theSiphon.pump()
+//            Log.d(TAG, "Coffee, here! Enjoy!~")
+//            theSiphon.off()
+//        }
+//    }
 
 
 //    class Person(name: Nameable, work: Runnable): Nameable by name, Runnable by work
