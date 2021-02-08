@@ -41,7 +41,11 @@ class MainActivity : AppCompatActivity() {
 
     open inner class FakeAge {
         var age = 0
-        get() = field + 3
+            set(value) = when {
+                value < 18 -> field = value - 3
+                value in 18..30 -> field = value
+                else -> field = value + 3
+            }
     }
 
     open inner class First {
