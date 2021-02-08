@@ -30,6 +30,18 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+        val kim = FakeAge()
+        kim.age = 15
+        debug("Kim's real age = 15, pretended age = ${kim.age}")
+
+        val hong = FakeAge()
+        hong.age = 35
+        debug("Hong's real age = 35, pretended age = ${hong.age}")
+    }
+
+    open inner class FakeAge {
+        var age = 0
+        get() = field + 3
     }
 
     open inner class First {
