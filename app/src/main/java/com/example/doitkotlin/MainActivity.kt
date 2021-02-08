@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import java.util.jar.Attributes
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,29 +25,48 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
+        val person = Person(StaffName(), Work())
+        Log.d(TAG, person.name)
+        person.run()
     }
 
-    interface A {
-        fun funtionA()
+    class Person(name: Nameable, work: Runnable): Nameable by name, Runnable by work
+
+    interface Nameable {
+        var name: String
     }
 
-    interface B {
-        fun functionB()
+    class StaffName: Nameable {
+        override var name: String = "Sean"
     }
 
-    class C(val a: A, val b: B) {
-        fun funtionC() {
-            a.funtionA()
-            b.functionB()
+    class Work: Runnable {
+        override fun run() {
+            Log.d(TAG, "work...")
         }
     }
 
-    class DelegatedC(a: A, b: B): A by a, B by b {
-        fun functionC() {
-            funtionA()
-            functionB()
-        }
-    }
+//    interface A {
+//        fun funtionA()
+//    }
+//
+//    interface B {
+//        fun functionB()
+//    }
+//
+//    class C(val a: A, val b: B) {
+//        fun funtionC() {
+//            a.funtionA()
+//            b.functionB()
+//        }
+//    }
+//
+//    class DelegatedC(a: A, b: B): A by a, B by b {
+//        fun functionC() {
+//            funtionA()
+//            functionB()
+//        }
+//    }
 
 //    private fun runInterfaceExample2() {
 //        val master = Master()
