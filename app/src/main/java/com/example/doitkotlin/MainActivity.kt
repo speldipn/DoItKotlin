@@ -26,24 +26,31 @@ class MainActivity : AppCompatActivity() {
 
     // private, default, public, internal
     private fun setup() {
-        var data: List<Any> by Delegates.vetoable(listOf()) {
-            prop, old, new ->
-        }
     }
 
-    private fun runVetoableExample() {
-        var max: Int by Delegates.vetoable(0) {
-                prop, old, new->
-            new > old
-        }
-
-        debug("$max")
-        max = 10
-        debug("$max")
-
-        max = 11
-        debug("$max")
-    }
+//    private fun runNotifyDataUsingVetoableExample() {
+//        var data: List<Any> by Delegates.vetoable(listOf()) {
+//                prop, old, new ->
+//                //notifyDataSetChagned()
+//                old != new
+//        }
+//
+//        // apdater.data = ...
+//    }
+//
+//    private fun runVetoableExample() {
+//        var max: Int by Delegates.vetoable(0) {
+//                prop, old, new->
+//            new > old
+//        }
+//
+//        debug("$max")
+//        max = 10
+//        debug("$max")
+//
+//        max = 11
+//        debug("$max")
+//    }
 
 //    inner class User {
 //        var name: String by Delegates.observable("NONAME") {
