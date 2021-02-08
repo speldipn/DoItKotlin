@@ -28,6 +28,23 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
     }
 
+//    private fun runStaticExample() {
+//        debug(Person.language)
+//        Person.language = "English"
+//        debug(Person.language)
+//        Person.work()
+//        // debug(Person.name)
+//    }
+//
+//    class Person {
+//        var id: Int = 0
+//        var name: String = "Youngdeok"
+//        companion object {
+//            var language: String = "Korean"
+//            fun work() { Log.d(MainActivity.TAG, "working...") }
+//        }
+//    }
+
 //    private fun runNotifyDataUsingVetoableExample() {
 //        var data: List<Any> by Delegates.vetoable(listOf()) {
 //                prop, old, new ->
