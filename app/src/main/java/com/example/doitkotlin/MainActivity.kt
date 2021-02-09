@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun runOuterClassExample() {
         val output = Outer.Nested().greeting()
-        debug(output)
 
         // Outer.outside()
         val outer = Outer()
@@ -46,11 +45,18 @@ class MainActivity : AppCompatActivity() {
         val ov = 5
         class Nested {
             val nv = 10
-            fun greeting() = "[Nested] Hello ! $nv"
+            fun greeting() {
+                Log.d(TAG, "[Nested] Hello ! $nv")
+                getSomething()
+            }
         }
         fun outside() {
             val msg = Nested().greeting()
             Log.d(TAG, "[Outer]: $msg, ${Nested().nv}")
+        }
+        companion object {
+            const val country = "Korea"
+            fun getSomething() = Log.d(TAG, "Get something..")
         }
     }
 
