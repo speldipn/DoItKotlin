@@ -28,35 +28,51 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runEnumInterfaceClassExample()
     }
+    
+//    private fun runReflectionExample() {
+//        debug("${User::class}")
+//        val classInfo = User::class
+//        classInfo.members.forEach {
+//            debug("Property name: ${it.name}, type: ${it.returnType}")
+//        }
+//        debug("${classInfo.qualifiedName}")
+//    }
+//
+//    class User(val id: Int, val name: String, var grade: String = "Normal") {
+//        fun check() {
+//            if (grade == "Normal") {
+//                Log.d(TAG, "You need to get the Silver grade")
+//            }
+//        }
+//    }
 
-    private fun runEnumInterfaceClassExample() {
-        debug("${MemberType.NORMAL.getScore()}") // 100
-        debug("${MemberType.GOLD}") // first
-        debug("${MemberType.valueOf("SILVER")}") // 1
-        debug(MemberType.SILVER.prio) // Second
-
-        for(grade in MemberType.values()) {
-            debug("grade.name = ${grade.name}, prio = ${grade.prio}")
-        }
-    }
-
-    interface Score {
-        fun getScore(): Int
-    }
-
-    enum class MemberType(var prio: String): Score {
-        NORMAL("Third") {
-            override fun getScore(): Int = 100
-        },
-        SILVER("Second") {
-            override fun getScore(): Int = 500
-        },
-        GOLD("First") {
-            override fun getScore(): Int = 1500
-        }
-    }
+//    private fun runEnumInterfaceClassExample() {
+//        debug("${MemberType.NORMAL.getScore()}") // 100
+//        debug("${MemberType.GOLD}") // first
+//        debug("${MemberType.valueOf("SILVER")}") // 1
+//        debug(MemberType.SILVER.prio) // Second
+//
+//        for(grade in MemberType.values()) {
+//            debug("grade.name = ${grade.name}, prio = ${grade.prio}")
+//        }
+//    }
+//
+//    interface Score {
+//        fun getScore(): Int
+//    }
+//
+//    enum class MemberType(var prio: String): Score {
+//        NORMAL("Third") {
+//            override fun getScore(): Int = 100
+//        },
+//        SILVER("Second") {
+//            override fun getScore(): Int = 500
+//        },
+//        GOLD("First") {
+//            override fun getScore(): Int = 1500
+//        }
+//    }
 
 //    private fun runEnumClassExample() {
 //        val day = DayOfWeek.SATURDAY
