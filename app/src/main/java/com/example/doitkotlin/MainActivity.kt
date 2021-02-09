@@ -9,6 +9,7 @@ import android.widget.TextView
 import java.lang.reflect.Member
 import java.util.*
 import java.util.jar.Attributes
+import kotlin.Comparator
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +30,114 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runArraySimpleExample()
     }
+
+    private fun runArraySimpleExample() {
+        val b = Array<Any>(10) { 0 }
+        b[0] = "Hello World"
+        b[1] = 1.1
+//        debug("${b[0]}")
+//        debug("${b[1]}")
+//        debug("${b[2]}")
+
+        val arr = arrayOf(1, 2, 3, 4, 5)
+        arr.forEach { num -> debug("$num") }
+        debug("====================")
+        arr.forEachIndexed { i, e -> debug("arr[$i] = $e") }
+        debug("====================")
+        val iter: Iterator<Int> = arr.iterator()
+        while(iter.hasNext()) {
+            val e = iter.next()
+            debug("$e")
+        }
+        debug("====================sortDescending")
+        arr.sortDescending()
+        arr.forEach { e -> debug("$e") }
+        debug("====================sort")
+        arr.sort()
+        arr.forEach { e -> debug("$e") }
+        debug("====================sortedDescending")
+        val descendSortedArray = arr.sortedDescending()
+        descendSortedArray.forEach { e -> debug("$e") }
+        debug("====================sorted")
+        val sortedArray = arr.sorted()
+        sortedArray.forEach { e -> debug("$e") }
+
+        val items = arrayOf("Dog", "Cat", "Lion", "Kangaroo", "Po")
+        items.sortDescending()
+        debug(items.contentToString())
+
+        debug("====================products")
+        data class Product(val name:String, val price: Double): Comparable<Product> {
+            override fun compareTo(other: Product): Int {
+                return price.toInt() - other.price.toInt()
+            }
+        }
+        val products = arrayOf(
+            Product("Snow Ball", 870.00),
+            Product("Smart Phone", 999.00),
+            Product("Drone", 240.00),
+            Product("Mouse", 333.55),
+            Product("Keyboard", 125.99),
+            Product("Monitor", 1500.99),
+            Product("Tablet", 512.99),
+        )
+
+//        products.sortBy { e -> e.price }
+//        products.sort()
+//        products.forEachIndexed { i, e -> debug("products[$i] $e") }
+//        products.forEach { e -> debug("$e") }
+
+
+        // sort with example
+        products.sortWith { p1, p2 ->
+            when {
+                p1.price > p2.price -> 1
+                p1.price == p2.price -> 0
+                else -> -1
+            }
+        }
+        products.forEach { e -> debug("$e") }
+    }
+
+//    private fun runArrayClassExample() {
+//        val arr = Array(5) { i -> i * 2 }
+//        debug(arr.contentToString())
+//
+//        val a = arrayOfNulls<Int>(1000)
+//        val a1 = Array(100) { 0 }
+//        if (a.contentEquals(a1)) {
+//            debug("equal")
+//        } else {
+//            debug("not equal")
+//        }
+//        debug("${a[0]}")
+//        debug("${a1[0]}")
+//
+//        var aa = Array(1000) { i -> myClass(i + 1) }
+//        debug("${aa[0]}")
+//
+//        var aaa = intArrayOf(1, 2, 3, 4, 5)
+//        var bbb = aaa.plus(6)
+//        debug(Arrays.toString(aaa))
+//        debug(Arrays.toString(bbb))
+//
+//        val arr3 = aaa.sliceArray(0..2)
+//        debug(Arrays.toString(arr3))
+//
+//        val _arr = arrayOf(1, 2, 3, 4, 5)
+//        debug("first: ${_arr.first()}")
+//        debug("last: ${_arr.last()}")
+//        debug("indexOf(3): ${_arr.indexOf(3)}")
+//        debug("average: ${_arr.average()}")
+//        debug("count: ${_arr.count()}")
+//        debug("${6 in _arr}")
+//    }
+//
+//    class myClass(val num: Int) {
+//        override fun toString(): String = "myClass num=$num"
+//    }
 
 //    private fun runDeepToStringExample() {
 //        val array = arrayOf(
