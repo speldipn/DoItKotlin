@@ -28,8 +28,15 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runGenericMyclassExample() {
+//        val a = MyClass<Int>(12)
+//        debug("${a.myProp}")
+//        debug("${a.javaClass}")
+//    }
+//
+//    class MyClass<T>(val myProp: T)
 
 //    private fun runGenericBoxExample() {
 //        val box1: Box<Int> = Box(1)
