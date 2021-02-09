@@ -28,15 +28,18 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val manager = Manager()
-        manager("Do something for me!")
+
     }
 
-    class Manager {
-        operator fun invoke(value: String) {
-            Log.d(TAG, value)
-        }
-    }
+//    class Manager {
+//        operator fun invoke(value: String) {
+//            Log.d(TAG, value)
+//        }
+//        fun test() {
+//            val sum = { x: Int, y: Int -> x + y}
+//            Log.d(TAG, "result: ${sum(3, 10)} ${sum.invoke(3, 10)}")
+//        }
+//    }
 
 //    private fun runOperatorOverrideExample() {
 //        // a + b, a.plus(b)
