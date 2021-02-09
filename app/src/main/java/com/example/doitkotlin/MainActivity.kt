@@ -31,6 +31,16 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
     }
 
+//    private fun runDeepToStringExample() {
+//        val array = arrayOf(
+//            intArrayOf(1, 2),
+//            intArrayOf(3, 4),
+//            intArrayOf(5, 6, 7)
+//        )
+//        debug(Arrays.toString(array))
+//        debug(Arrays.deepToString(array))
+//    }
+
 //    private fun runArrayDeclareExample() {
 //        val arr = intArrayOf(1, 2, 3, 4, 5)
 //
