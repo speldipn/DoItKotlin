@@ -28,20 +28,27 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        run2DArrayExample()
+        runMixArrayExample()
     }
 
-    private fun run2DArrayExample() {
-        val array1 = arrayOf(1, 2, 3)
-        val array2 = arrayOf(4, 5, 6)
-        val array3 = arrayOf(7, 8, 9)
-        val arr2d = arrayOf(array1, array2, array3)
-        for(ele in arr2d) {
-            for(e in ele) {
-                debug("$e")
-            }
+    private fun runMixArrayExample() {
+        val mixArr = arrayOf(4, 5, 7, 3, "Chike", false)
+        for(e in mixArr) {
+            debug("$e")
         }
     }
+
+//    private fun run2DArrayExample() {
+//        val array1 = arrayOf(1, 2, 3)
+//        val array2 = arrayOf(4, 5, 6)
+//        val array3 = arrayOf(7, 8, 9)
+//        val arr2d = arrayOf(array1, array2, array3)
+//        for(ele in arr2d) {
+//            for(e in ele) {
+//                debug("$e")
+//            }
+//        }
+//    }
 
 //    private fun runInterfaceGenericClassExample() {
 //        val obj1 = ClassA<HandlerA>()
