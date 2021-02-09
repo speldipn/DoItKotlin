@@ -28,22 +28,26 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val calc = Calc<Int>()
-        debug("${calc.plus(10, 20)}")
 
-        val calc2 = Calc<Double>()
-        val calc3 = Calc<Long>()
-        // val calc4 = Calc<String>()
-
-        debug("${calc2.plus(2.5, 3.5)}")
-        debug("${calc3.plus(5L, 10L)}")
     }
 
-    class Calc<T: Number> {
-        fun plus(arg1: T, arg2: T): Double {
-            return arg1.toDouble() + arg2.toDouble()
-        }
-    }
+//    private fun runCalcGenericExample() {
+//        val calc = Calc<Int>()
+//        debug("${calc.plus(10, 20)}")
+//
+//        val calc2 = Calc<Double>()
+//        val calc3 = Calc<Long>()
+//        // val calc4 = Calc<String>()
+//
+//        debug("${calc2.plus(2.5, 3.5)}")
+//        debug("${calc3.plus(5L, 10L)}")
+//    }
+//
+//    class Calc<T: Number> {
+//        fun plus(arg1: T, arg2: T): Double {
+//            return arg1.toDouble() + arg2.toDouble()
+//        }
+//    }
 
 //    private fun runLambdaGenericExample() {
 //        fun <T> sumGeneric(a: T, b: T, op: (a: T, b: T) -> T): T {
