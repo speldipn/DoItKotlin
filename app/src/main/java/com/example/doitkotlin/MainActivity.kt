@@ -27,38 +27,40 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runOuterClassExample()
     }
 
-    private fun runOuterClassExample() {
-        val output = Outer.Nested().greeting()
-
-        // Outer.outside()
-        val outer = Outer()
-        outer.outside()
-
-        val nested = Outer.Nested()
-        nested.greeting()
-    }
-
-    class Outer {
-        val ov = 5
-        class Nested {
-            val nv = 10
-            fun greeting() {
-                Log.d(TAG, "[Nested] Hello ! $nv")
-                getSomething()
-            }
-        }
-        fun outside() {
-            val msg = Nested().greeting()
-            Log.d(TAG, "[Outer]: $msg, ${Nested().nv}")
-        }
-        companion object {
-            const val country = "Korea"
-            fun getSomething() = Log.d(TAG, "Get something..")
-        }
-    }
+//    private fun runOuterClassExample() {
+//        val output = Outer.Nested().greeting()
+//
+//        // Outer.outside()
+//        val outer = Outer()
+//        outer.outside()
+//
+//        val nested = Outer.Nested()
+//        nested.greeting()
+//    }
+//
+//    class Outer {
+//        val ov = 5
+//
+//        class Nested {
+//            val nv = 10
+//            fun greeting() {
+//                Log.d(TAG, "[Nested] Hello ! $nv")
+//                getSomething()
+//            }
+//        }
+//
+//        fun outside() {
+//            val msg = Nested().greeting()
+//            Log.d(TAG, "[Outer]: $msg, ${Nested().nv}")
+//        }
+//
+//        companion object {
+//            const val country = "Korea"
+//            fun getSomething() = Log.d(TAG, "Get something..")
+//        }
+//    }
 
 //
 //    class A {
