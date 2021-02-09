@@ -27,6 +27,16 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        val mySdcard = Smartphone("S7").ExternalStorage(32)
+        debug(mySdcard.getInfo())
+    }
+
+    class Smartphone(val model: String) {
+        private val cpu = "Exynos"
+
+        inner class ExternalStorage(private val size: Int) {
+            fun getInfo() = "${model}: Installed on $cpu with ${size}Gb"
+        }
     }
 
 //    private fun runOuterClassExample() {
