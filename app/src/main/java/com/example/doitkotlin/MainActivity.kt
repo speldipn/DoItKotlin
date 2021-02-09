@@ -28,8 +28,25 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runContainsExample() {
+//        val i = 5
+//
+//        if (i in 1..10) {
+//            debug("1 <= $i <= 10")
+//        }
+//
+//        for (i in 1..4) debug("$i")
+//
+//        val findNum = 10
+//        val array = arrayOf(10, 2, 3, 5)
+//        if (array.contains(findNum)) {
+//            debug("array contains $findNum")
+//        } else {
+//            debug("array not contain $findNum")
+//        }
+//    }
 
 //    private fun runUnaryExample() {
 //        val point = Point(10, 20)
@@ -73,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 //        }
 //        operator fun dec() = Point(--x, --y)
 //    }
-    
+
 //    private fun runReflectionExample() {
 //        debug("${User::class}")
 //        val classInfo = User::class
