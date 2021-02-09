@@ -27,26 +27,50 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val myPhone = Smartphone("Note9")
-        myPhone.ExternalStorage(128)
-        debug(myPhone.powerOn())
+        val phone = SmartPhone("ZFlip")
+        debug(phone.powerOn())
     }
 
-    class Smartphone(val model: String) {
-        private val cpu = "Exynos"
+    interface Switcher {
+        fun on(): String
+    }
 
-        inner class ExternalStorage(private val size: Int) {
-            fun getInfo() = "${model}: Installed on $cpu with ${size}Gb"
-        }
-
+    class SmartPhone(val model: String) {
         fun powerOn(): String {
             class Led(val color: String) {
                 fun blink(): String = "Blinking $color on $model"
             }
             val powerStatus = Led("Red")
-            return powerStatus.blink()
+            val powerSwitch = object: Switcher {
+                override fun on(): String {
+                    return powerStatus.blink()
+                }
+            }
+            return powerSwitch.on()
         }
     }
+
+//    private fun localClassExample() {
+//        val myPhone = Smartphone("Note9")
+//        myPhone.ExternalStorage(128)
+//        debug(myPhone.powerOn())
+//    }
+//
+//    class Smartphone(val model: String) {
+//        private val cpu = "Exynos"
+//
+//        inner class ExternalStorage(private val size: Int) {
+//            fun getInfo() = "${model}: Installed on $cpu with ${size}Gb"
+//        }
+//
+//        fun powerOn(): String {
+//            class Led(val color: String) {
+//                fun blink(): String = "Blinking $color on $model"
+//            }
+//            val powerStatus = Led("Red")
+//            return powerStatus.blink()
+//        }
+//    }
 
 //    private fun runOuterClassExample() {
 //        val output = Outer.Nested().greeting()
