@@ -28,21 +28,43 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runIntArrayExample()
     }
 
-    private fun runIntArrayExample(){
-        val intOnlyArr1 = arrayOf<Int>(4, 5, 7, 3)
-        val intOnlyArr2 = intArrayOf(4, 5, 7, 3, 1)
-        debug("arraOf")
-        for(e in intOnlyArr1) {
-            debug("$e")
-        }
-        debug("intArraOf")
-        for(e in intOnlyArr2) {
-            debug("$e")
-        }
-    }
+//    private fun runArraySampleExample() {
+//        val array = intArrayOf(5, 0, 2, 5)
+//        val ele = array.get(0)
+//        val ele1 = array[0]
+//
+//        debug("$ele, $ele1")
+//
+//        val array2d = arrayOf(
+//            arrayOf(1, 2, 3),
+//            arrayOf(4, 5, 6),
+//            arrayOf(7, 8, 9)
+//        )
+//
+//        debug("${array2d[2][1]}")
+//
+//        array2d[2][1] = 55
+//        debug("${array2d[2][1]}")
+//
+//        for (i in 0..arr.size-1) {
+//
+//        }
+//    }
+
+//    private fun runIntArrayExample(){
+//        val intOnlyArr1 = arrayOf<Int>(4, 5, 7, 3)
+//        val intOnlyArr2 = intArrayOf(4, 5, 7, 3, 1)
+//        debug("arraOf")
+//        for(e in intOnlyArr1) {
+//            debug("$e")
+//        }
+//        debug("intArraOf")
+//        for(e in intOnlyArr2) {
+//            debug("$e")
+//        }
+//    }
 
 //    private fun runMixArrayExample() {
 //        val mixArr = arrayOf(4, 5, 7, 3, "Chike", false)
