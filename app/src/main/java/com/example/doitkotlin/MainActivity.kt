@@ -27,29 +27,47 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runSealClassExample()
     }
 
+//    private fun runEnumClassExample() {
+//        val day = DayOfWeek.SATURDAY
+//        when(day.num) {
+//            in 1..5 -> debug("Weekday")
+//            else -> debug("Weekend")
+//        }
+//
+//        val direct = Direction.WEST
+//        debug("direction WEST: ${direct.name} ${direct.ordinal}")
+//    }
+//
+//    enum class Direction {
+//        NORTH, SOUTH, WEST, EAST
+//    }
+//
+//    enum class DayOfWeek(val num: Int) {
+//        MONDAY(1), TUESDAY(2), WEDNESDAY(3), THURSDAY(4),
+//        FRIDAY(5), SATURDAY(6), SUNDAY(7)
+//    }
 
-    private fun runSealClassExample() {
-        val result = Result.Success("Good")
-        val msg = eval(result)
-        debug(msg)
-    }
-
-    fun eval(result: Result): String = when(result) {
-        is Status = "in progress"
-        is Result.Success -> result.message
-        is Result.Error -> result.message
-    }
-
-    sealed class Result {
-        open class Success(val message: String): Result()
-        class Error(val code: Int, val message: String): Result()
-    }
-
-    class Status: Result()
-    class Inside: Result.Success("Status")
+//    private fun runSealClassExample() {
+//        val result = Result.Success("Good")
+//        val msg = eval(result)
+//        debug(msg)
+//    }
+//
+//    fun eval(result: Result): String = when(result) {
+//        is Status = "in progress"
+//        is Result.Success -> result.message
+//        is Result.Error -> result.message
+//    }
+//
+//    sealed class Result {
+//        open class Success(val message: String): Result()
+//        class Error(val code: Int, val message: String): Result()
+//    }
+//
+//    class Status: Result()
+//    class Inside: Result.Success("Status")
 
 //    private fun runAnonymousClassExample() {
 //        val phone = SmartPhone("ZFlip")
