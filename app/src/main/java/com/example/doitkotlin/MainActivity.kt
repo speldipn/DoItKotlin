@@ -28,6 +28,14 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        val manager = Manager()
+        manager("Do something for me!")
+    }
+
+    class Manager {
+        operator fun invoke(value: String) {
+            Log.d(TAG, value)
+        }
     }
 
 //    private fun runOperatorOverrideExample() {
