@@ -27,8 +27,32 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runOuterClassExample()
     }
 
+    private fun runOuterClassExample() {
+        val output = Outer.Nested().greeting()
+        debug(output)
+
+        // Outer.outside()
+        val outer = Outer()
+        outer.outside()
+
+        val nested = Outer.Nested()
+        nested.greeting()
+    }
+
+    class Outer {
+        val ov = 5
+        class Nested {
+            val nv = 10
+            fun greeting() = "[Nested] Hello ! $nv"
+        }
+        fun outside() {
+            val msg = Nested().greeting()
+            Log.d(TAG, "[Outer]: $msg, ${Nested().nv}")
+        }
+    }
 
 //
 //    class A {
