@@ -28,18 +28,21 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val obj = GenericNull<String>()
-        obj.EqualityFunc("Hello", "World")
-
-        val obj2 = GenericNull<Int?>()
-        obj2.EqualityFunc(null, 10)
     }
 
-    class GenericNull<T> {
-        fun EqualityFunc(arg1: T, arg2: T) {
-            Log.d(TAG, "${arg1?.equals(arg2)}")
-        }
-    }
+//    private fun runSimpleGenericExample() {
+//        val obj = GenericNull<String>()
+//        obj.EqualityFunc("Hello", "World")
+//
+//        val obj2 = GenericNull<Int?>()
+//        obj2.EqualityFunc(null, 10)
+//    }
+//
+//    class GenericNull<T> {
+//        fun EqualityFunc(arg1: T, arg2: T) {
+//            Log.d(TAG, "${arg1 == arg2}")
+//        }
+//    }
 
 //    private fun runGenericMyclassExample() {
 //        val a = MyClass<Int>(12)
