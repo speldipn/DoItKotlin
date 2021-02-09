@@ -27,28 +27,53 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val phone = SmartPhone("ZFlip")
-        debug(phone.powerOn())
+        runSealClassExample()
     }
 
-    interface Switcher {
-        fun on(): String
+
+    private fun runSealClassExample() {
+        val result = Result.Success("Good")
+        val msg = eval(result)
+        debug(msg)
     }
 
-    class SmartPhone(val model: String) {
-        fun powerOn(): String {
-            class Led(val color: String) {
-                fun blink(): String = "Blinking $color on $model"
-            }
-            val powerStatus = Led("Red")
-            val powerSwitch = object: Switcher {
-                override fun on(): String {
-                    return powerStatus.blink()
-                }
-            }
-            return powerSwitch.on()
-        }
+    fun eval(result: Result): String = when(result) {
+        is Status = "in progress"
+        is Result.Success -> result.message
+        is Result.Error -> result.message
     }
+
+    sealed class Result {
+        open class Success(val message: String): Result()
+        class Error(val code: Int, val message: String): Result()
+    }
+
+    class Status: Result()
+    class Inside: Result.Success("Status")
+
+//    private fun runAnonymousClassExample() {
+//        val phone = SmartPhone("ZFlip")
+//        debug(phone.powerOn())
+//    }
+//
+//    interface Switcher {
+//        fun on(): String
+//    }
+//
+//    class SmartPhone(val model: String) {
+//        fun powerOn(): String {
+//            class Led(val color: String) {
+//                fun blink(): String = "Blinking $color on $model"
+//            }
+//            val powerStatus = Led("Red")
+//            val powerSwitch = object: Switcher {
+//                override fun on(): String {
+//                    return powerStatus.blink()
+//                }
+//            }
+//            return powerSwitch.on()
+//        }
+//    }
 
 //    private fun localClassExample() {
 //        val myPhone = Smartphone("Note9")
