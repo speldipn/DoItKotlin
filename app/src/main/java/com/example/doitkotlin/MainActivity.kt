@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import java.lang.reflect.Member
+import java.util.*
 import java.util.jar.Attributes
 
 
@@ -29,6 +30,26 @@ class MainActivity : AppCompatActivity() {
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
     }
+
+//    private fun runArrayDeclareExample() {
+//        val arr = intArrayOf(1, 2, 3, 4, 5)
+//
+//        debug("arr: ${Arrays.toString(arr)}")
+//        debug("size: ${arr.size}")
+//        debug("sum(): ${arr.sum()}")
+//
+//        debug("${arr.get(2)}")
+//        debug("${arr[2]}")
+//
+//        arr.set(2, 7)
+//        arr[0] = 8
+//        debug("size: ${arr.size} arr[0]: ${arr[0]}, arr[2]: ${arr[2]}")
+//        debug(Arrays.toString(arr))
+//
+//        for (i in 0..arr.size-1) {
+//            debug("${arr[i]}")
+//        }
+//    }
 
 //    private fun runArraySampleExample() {
 //        val array = intArrayOf(5, 0, 2, 5)
