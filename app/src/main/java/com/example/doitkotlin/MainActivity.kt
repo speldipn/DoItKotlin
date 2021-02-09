@@ -27,8 +27,22 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runDataClassExample()
     }
+
+
+//
+//    class A {
+//        val a = 10
+//        fun test1() {
+//        }
+//
+//        class B {
+//            val b = 20
+//
+//            fun test2() {
+//            }
+//        }
+//    }
 
     private fun runDataClassExample() {
 //        val cus1 = Customer("Sean", "sean@gmail.com")
@@ -68,8 +82,7 @@ class MainActivity : AppCompatActivity() {
 //        val (name, email) = myFunc()
 //        debug("$name, $email")
 
-        val myLambda = {
-            (nameLa, emailLa): Customer ->
+        val myLambda = { (nameLa, emailLa): Customer ->
             debug(nameLa)
             debug(emailLa)
         }
