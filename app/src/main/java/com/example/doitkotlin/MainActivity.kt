@@ -30,6 +30,26 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
     }
 
+//    private fun runGenericArrayExample() {
+//        val arr1: Array<String> = arrayOf("Apple", "Banana", "Cherry", "Durian")
+//        val arr2: Array<Int> = arrayOf(1, 2, 3, 4)
+//
+//        debug("arr.indices ${arr1.indices}")
+//        debug("${find<String>(arr1, "Cherry")}")
+//        debug("${find(arr2, 5)}")
+//    }
+//
+//    fun <T> find(a: Array<T>, target: T): Int {
+//        for(data in a.indices) {
+//            if(data == target) return data
+//        }
+//        return -1
+//        for (i in a.indices) {
+//            if (a[i] == Target) return i
+//        }
+//        return -1
+//    }
+
 //    private fun runSimpleGenericExample() {
 //        val obj = GenericNull<String>()
 //        obj.EqualityFunc("Hello", "World")
