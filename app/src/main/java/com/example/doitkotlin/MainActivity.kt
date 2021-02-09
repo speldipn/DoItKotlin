@@ -29,6 +29,31 @@ class MainActivity : AppCompatActivity() {
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
     }
+
+//    private fun runOperatorOverrideExample() {
+//        // a + b, a.plus(b)
+//        // a - b, a.minus(b)
+//        // a * b, a.times(b)
+//        // a / b, a.div(b)
+//        // a % b, a.rem(b)
+//        // a.b, a.rangeTo(b)
+//
+//        val p1 = Point(3, -8)
+//        val p2 = Point(2, 9)
+//
+//        var point = p1 + p2
+//        debug("point = ${point.x}, ${point.y}")
+//
+//        val decPoint = point--
+//        debug("decPoint = ${decPoint.x}, ${decPoint.y}")
+//    }
+//
+//    class Point(var x: Int = 0, var y: Int = 10) {
+//        operator fun plus(p: Point): Point {
+//            return Point(x + p.x, y + p.y)
+//        }
+//        operator fun dec() = Point(--x, --y)
+//    }
     
 //    private fun runReflectionExample() {
 //        debug("${User::class}")
