@@ -31,6 +31,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun typeLimitGenericExample() {
+//        debug("${sum(10, 20, {a, b -> a + b})}")
+//        debug("${sum(30, 20, {a, b -> a + b})}")
+//    }
+//
+//    fun <T: Number> sum(a: T, b: T, op: (a: T, b: T) -> T): T {
+//        return op(a, b)
+//    }
+
 //    private fun runCalcGenericExample() {
 //        val calc = Calc<Int>()
 //        debug("${calc.plus(10, 20)}")
