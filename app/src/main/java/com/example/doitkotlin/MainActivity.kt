@@ -28,15 +28,28 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runMixArrayExample()
+        runIntArrayExample()
     }
 
-    private fun runMixArrayExample() {
-        val mixArr = arrayOf(4, 5, 7, 3, "Chike", false)
-        for(e in mixArr) {
+    private fun runIntArrayExample(){
+        val intOnlyArr1 = arrayOf<Int>(4, 5, 7, 3)
+        val intOnlyArr2 = intArrayOf(4, 5, 7, 3, 1)
+        debug("arraOf")
+        for(e in intOnlyArr1) {
+            debug("$e")
+        }
+        debug("intArraOf")
+        for(e in intOnlyArr2) {
             debug("$e")
         }
     }
+
+//    private fun runMixArrayExample() {
+//        val mixArr = arrayOf(4, 5, 7, 3, "Chike", false)
+//        for(e in mixArr) {
+//            debug("$e")
+//        }
+//    }
 
 //    private fun run2DArrayExample() {
 //        val array1 = arrayOf(1, 2, 3)
