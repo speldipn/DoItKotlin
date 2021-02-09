@@ -28,6 +28,22 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runLambdaGenericExample()
+    }
+
+    private fun runLambdaGenericExample() {
+        fun <T> sumGeneric(a: T, b: T, op: (a: T, b: T) -> T): T {
+            return op(a, b)
+        }
+
+        fun sum(a: Int, b: Int) = a + b
+        val sum1: (Int, Int) -> Int = { a, b -> a + b }
+        val sum2: (a: Int, b: Int) -> Int = { a, b -> a + b }
+
+        debug("1 ${sum(10, 20)}")
+        debug("2 ${sum1(10, 20)}")
+        debug("3 ${sum2(10, 20)}")
+        debug("4 ${sumGeneric(10, 20, { a, b -> a + b })}")
     }
 
 //    private fun runGenericArrayExample() {
