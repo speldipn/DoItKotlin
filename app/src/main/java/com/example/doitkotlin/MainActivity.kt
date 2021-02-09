@@ -31,6 +31,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runUnaryExample() {
+//        val point = Point(10, 20)
+//        debug("${-point}")
+//    }
+//
+//    data class Point(val x: Int, val y: Int)
+//    operator fun Point.unaryMinus() = Point(-x, -y)
+
 //    class Manager {
 //        operator fun invoke(value: String) {
 //            Log.d(TAG, value)
