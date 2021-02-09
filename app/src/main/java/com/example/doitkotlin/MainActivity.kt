@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        val mySdcard = Smartphone("S7").ExternalStorage(32)
-        debug(mySdcard.getInfo())
+        val myPhone = Smartphone("Note9")
+        myPhone.ExternalStorage(128)
+        debug(myPhone.powerOn())
     }
 
     class Smartphone(val model: String) {
@@ -36,6 +37,14 @@ class MainActivity : AppCompatActivity() {
 
         inner class ExternalStorage(private val size: Int) {
             fun getInfo() = "${model}: Installed on $cpu with ${size}Gb"
+        }
+
+        fun powerOn(): String {
+            class Led(val color: String) {
+                fun blink(): String = "Blinking $color on $model"
+            }
+            val powerStatus = Led("Red")
+            return powerStatus.blink()
         }
     }
 
