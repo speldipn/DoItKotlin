@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import java.lang.reflect.Member
 import java.util.jar.Attributes
 
 
@@ -27,6 +28,34 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runEnumInterfaceClassExample()
+    }
+
+    private fun runEnumInterfaceClassExample() {
+        debug("${MemberType.NORMAL.getScore()}") // 100
+        debug("${MemberType.GOLD}") // first
+        debug("${MemberType.valueOf("SILVER")}") // 1
+        debug(MemberType.SILVER.prio) // Second
+
+        for(grade in MemberType.values()) {
+            debug("grade.name = ${grade.name}, prio = ${grade.prio}")
+        }
+    }
+
+    interface Score {
+        fun getScore(): Int
+    }
+
+    enum class MemberType(var prio: String): Score {
+        NORMAL("Third") {
+            override fun getScore(): Int = 100
+        },
+        SILVER("Second") {
+            override fun getScore(): Int = 500
+        },
+        GOLD("First") {
+            override fun getScore(): Int = 1500
+        }
     }
 
 //    private fun runEnumClassExample() {
