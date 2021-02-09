@@ -28,8 +28,20 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runInterfaceGenericClassExample() {
+//        val obj1 = ClassA<HandlerA>()
+//        val obj2 = ClassA<HandlerB>()
+//    }
+//
+//    interface InterfaceA
+//    interface InterfaceB
+//
+//    class HandlerA: InterfaceA, InterfaceB
+//    class HandlerB: InterfaceA, InterfaceB
+//
+//    class ClassA<T> where T: InterfaceA, T: InterfaceB
 
 //    private fun typeLimitGenericExample() {
 //        debug("${sum(10, 20, {a, b -> a + b})}")
