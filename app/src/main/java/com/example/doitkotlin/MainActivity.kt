@@ -35,6 +35,32 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runMapExample() {
+//        val langMap: Map<Int, String> = mapOf(11 to "Java", 22 to "Kotlin", 33 to "C++", 11 to "aa")
+//        for ((key, value) in langMap) {
+//            debug("key=$key value=$value")
+//        }
+//
+//        debug("langMap[22] = ${langMap[22]}")
+//        debug("langMap.get(22) = ${langMap.get(22)}")
+//        debug("langMap.keys = ${langMap.keys}")
+//
+//        // mutable
+//        val capitalCityMap: MutableMap<String, String> =
+//            mutableMapOf("Korea" to "Seoul", "China" to "Beijing", "Japan" to "Tokyo")
+//        debug("${capitalCityMap}")
+//        debug("${capitalCityMap.keys}")
+//        debug("${capitalCityMap.values}")
+//
+//        capitalCityMap.put("UK", "London")
+//        capitalCityMap.remove("China")
+//        debug("$capitalCityMap")
+//
+//        val addData = mutableMapOf("USA" to "Washington")
+//        capitalCityMap.putAll(addData)
+//        debug("$capitalCityMap")
+//    }
+
 //    private fun runLinkedSetExample() {
 //        val intsLinkedHashSet: LinkedHashSet<Int> = linkedSetOf(35, 21, 76, 26, 75)
 //        intsLinkedHashSet.add(4)
