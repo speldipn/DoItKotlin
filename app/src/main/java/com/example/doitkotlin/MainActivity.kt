@@ -32,7 +32,44 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runReturnListExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listPair = listOf(Pair("A", 300), Pair("B", 200), Pair("C", 100))
+//        val map = mapOf(11 to "Java", 22 to "Kotlin", 33 to "C++")
+//
+//        list.forEach { debug("$it") }
+//        debug("\n")
+//        list.forEachIndexed { index, value -> debug("list[$index]=$value") }
+//
+//        val returnedList = list.onEach { it * 10 }
+//        debug("\n")
+//
+//        val returnedMap = map.onEach { debug("key: ${it.key}, value: ${it.value}") }
+//        debug("returnedList = $returnedList")
+//        debug("returnedMap = $returnedMap")
+//
+//        debug("${list.count { it % 2 == 0 }}")
+//
+//        debug("max: ${list.max()}")
+//        debug("min: ${list.min()}")
+//
+//        debug("maxBy: ${map.maxBy { it.key }}") // 6
+//        debug("maxBy: ${map.minBy { it.key }}") // 1
+//
+//        debug("fold(4): ${list.fold(4) { total, next -> total + next }}")
+//        debug("fold(1): ${list.fold(1) { total, next -> total * next }}")
+//
+//        debug("${list.foldRight(4) { total, next -> total + next }}")
+//        debug("${list.foldRight(1) { total, next -> total * next }}")
+//
+//        debug("${list.reduce { total, next -> total + next }}")
+//        debug("${list.reduceRight { total, next -> total + next }}")
+//
+//        debug("${listPair.sumBy { it.second }}")
+//    }
 
 //    private fun runCollectionExtensionExample() {
 //        val list1: List<String> = listOf("one", "two", "three")
