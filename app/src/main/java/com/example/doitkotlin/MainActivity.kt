@@ -34,46 +34,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun runArraySimpleExample() {
-        val b = Array<Any>(10) { 0 }
-        b[0] = "Hello World"
-        b[1] = 1.1
+//        val b = Array<Any>(10) { 0 }
+//        b[0] = "Hello World"
+//        b[1] = 1.1
 //        debug("${b[0]}")
 //        debug("${b[1]}")
 //        debug("${b[2]}")
 
-        val arr = arrayOf(1, 2, 3, 4, 5)
-        arr.forEach { num -> debug("$num") }
-        debug("====================")
-        arr.forEachIndexed { i, e -> debug("arr[$i] = $e") }
-        debug("====================")
-        val iter: Iterator<Int> = arr.iterator()
-        while(iter.hasNext()) {
-            val e = iter.next()
-            debug("$e")
-        }
-        debug("====================sortDescending")
-        arr.sortDescending()
-        arr.forEach { e -> debug("$e") }
-        debug("====================sort")
-        arr.sort()
-        arr.forEach { e -> debug("$e") }
-        debug("====================sortedDescending")
-        val descendSortedArray = arr.sortedDescending()
-        descendSortedArray.forEach { e -> debug("$e") }
-        debug("====================sorted")
-        val sortedArray = arr.sorted()
-        sortedArray.forEach { e -> debug("$e") }
-
-        val items = arrayOf("Dog", "Cat", "Lion", "Kangaroo", "Po")
-        items.sortDescending()
-        debug(items.contentToString())
-
-        debug("====================products")
-        data class Product(val name:String, val price: Double): Comparable<Product> {
+        //        val arr = arrayOf(1, 2, 3, 4, 5)
+//        arr.forEach { num -> debug("$num") }
+//        debug("====================")
+//        arr.forEachIndexed { i, e -> debug("arr[$i] = $e") }
+//        debug("====================")
+//        val iter: Iterator<Int> = arr.iterator()
+//        while(iter.hasNext()) {
+//            val e = iter.next()
+//            debug("$e")
+//        }
+//        debug("====================sortDescending")
+//        arr.sortDescending()
+//        arr.forEach { e -> debug("$e") }
+//        debug("====================sort")
+//        arr.sort()
+//        arr.forEach { e -> debug("$e") }
+//        debug("====================sortedDescending")
+//        val descendSortedArray = arr.sortedDescending()
+//        descendSortedArray.forEach { e -> debug("$e") }
+//        debug("====================sorted")
+//        val sortedArray = arr.sorted()
+//        sortedArray.forEach { e -> debug("$e") }
+//
+//        val items = arrayOf("Dog", "Cat", "Lion", "Kangaroo", "Po")
+//        items.sortDescending()
+//        debug(items.contentToString())
+//
+//        debug("====================products")
+        data class Product(val name: String, val price: Double) : Comparable<Product> {
             override fun compareTo(other: Product): Int {
                 return price.toInt() - other.price.toInt()
             }
         }
+
         val products = arrayOf(
             Product("Snow Ball", 870.00),
             Product("Smart Phone", 999.00),
@@ -91,14 +92,36 @@ class MainActivity : AppCompatActivity() {
 
 
         // sort with example
-        products.sortWith { p1, p2 ->
-            when {
-                p1.price > p2.price -> 1
-                p1.price == p2.price -> 0
-                else -> -1
-            }
-        }
-        products.forEach { e -> debug("$e") }
+//        products.sortWith( Comparator { p1, p2 ->
+//            when {
+//                p1.price > p2.price -> 1
+//                p1.price == p2.price -> 0
+//                else -> -1
+//            }
+//        })
+//        products.sortWith(compareBy({it.name}, {it.price}))
+//        products.forEach { e -> debug("$e") }
+
+        val arr = arrayOf(1, -1, 3, 4, -5, 0)
+        arr.filter { e -> e > 0 }.forEach { e -> debug("$e") }
+
+        val fruits = arrayOf("banana", "avocado", "apple", "kiwi")
+        fruits.filter { it.startsWith("a") }
+            .sortedBy { it }
+            .map { it.toUpperCase() }
+            .forEach { debug(it) }
+
+        debug("${products.minBy { it.price }}")
+        debug("${products.maxBy { it.price }}")
+
+        val numbers = arrayOf(1, 2, 3)
+        val strs = arrayOf("one", "two", "three")
+        val simpleArray = arrayOf(numbers, strs)
+        simpleArray.forEach { debug("$it") }
+
+        val flattenSimpleArray = simpleArray.flatten()
+        debug("$flattenSimpleArray")
+
     }
 
 //    private fun runArrayClassExample() {
