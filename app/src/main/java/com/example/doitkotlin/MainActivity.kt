@@ -35,6 +35,16 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+//    private fun runTreeSetExample() {
+//        val intsSortedSet: TreeSet<Int> = sortedSetOf(4, 1, 7, 2)
+//        intsSortedSet.add(6)
+//        intsSortedSet.remove(1)
+//        debug("$intsSortedSet")
+//
+//        intsSortedSet.clear()
+//        debug("intsSortedSet = $intsSortedSet")
+//    }
+
 //    private fun runHashSetExample() {
 //        val intHashSet: HashSet<Int> = hashSetOf(6, 3, 4, 7)
 //        intHashSet.add(5)
