@@ -32,6 +32,13 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runCollectionExtensionExample()
+    }
+
+    private fun runCollectionExtensionExample() {
+        val list1: List<String> = listOf("one", "two", "three")
+        val list2: List<Int> = listOf(1, 3, 4)
+        val map1 = mapOf("hi" to 1, "hello" to 2, "Goodbye" to 3)
     }
 
 //    private fun runCollectionPracticeExample() {
