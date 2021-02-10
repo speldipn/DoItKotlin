@@ -30,8 +30,25 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
+        runCollectionExample()
     }
+
+    private fun runCollectionExample() {
+        val fruits = listOf("apple", "banana", "kiwi")
+
+        for(index in fruits.indices) {
+            debug("fruits[$index] = ${fruits[index]}")
+        }
+    }
+
+//    private fun runStringTrimExample() {
+//        val text = """ |Tell me and I forget.
+//            |Teach me and I remember.
+//            |Involve me and I learn.
+//            |(Benjamin Franklin)
+//        """.trimMargin()
+//        debug(text)
+//    }
 
 //    private fun runStringExample() {
 //        val hello = "Hello world" // use constant pool of java
