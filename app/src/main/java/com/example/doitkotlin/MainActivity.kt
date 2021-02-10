@@ -31,7 +31,16 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+
+//    private fun runHashSetExample() {
+//        val intHashSet: HashSet<Int> = hashSetOf(6, 3, 4, 7)
+//        intHashSet.add(5)
+//        intHashSet.remove(6)
+//        debug("$intHashSet")
+//    }
 
 //    private fun runSetMapExample() {
 //        val mixedTypeSet = setOf("Hello", 5, "world", 3.14, 'c')
