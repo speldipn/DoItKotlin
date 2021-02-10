@@ -35,6 +35,27 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runCollectionExtensionValidationExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listPair = listOf(Pair("A", 300), Pair("B", 200), Pair("C", 100))
+//        val map = mapOf(11 to "Java", 22 to "Kotlin", 33 to "C++")
+//
+//        debug("${list.all { it < 10 }}")
+//        debug("${list.all { it % 2 == 0 }}")
+//
+//        debug("=====")
+//        debug("${list.any { it % 2 == 0 }}")
+//        debug("${list.any { it > 10 }}")
+//
+//        debug("=====")
+//        debug("list.contains(2) " + list.contains(2))
+//        debug("2 in list ${2 in list}")
+//        debug("map.contains(11) ${map.contains(11)}")
+//        debug("11 in map ${11 in map}")
+//
+//        debug("containsAll: " + list.containsAll(listOf(1, 2, 3)))
+//    }
+
 //    private fun runReturnListExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
 //        val listPair = listOf(Pair("A", 300), Pair("B", 200), Pair("C", 100))
