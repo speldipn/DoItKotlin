@@ -39,6 +39,18 @@ class MainActivity : AppCompatActivity() {
         val list1: List<String> = listOf("one", "two", "three")
         val list2: List<Int> = listOf(1, 3, 4)
         val map1 = mapOf("hi" to 1, "hello" to 2, "Goodbye" to 3)
+
+        val result = list1 + "four"
+        debug("plus $result")
+
+        val result1 = list2
+        debug("plus $result1")
+
+        val result2 = list2 + listOf(5, 6, 7)
+        debug("plus $result2")
+
+        val result3 = list2 - 1
+        debug("minus $result3")
     }
 
 //    private fun runCollectionPracticeExample() {
