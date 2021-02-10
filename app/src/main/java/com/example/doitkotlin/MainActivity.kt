@@ -30,29 +30,38 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runStringExample()
+
     }
 
-    private fun runStringExample() {
-        val hello = "Hello world" // use constant pool of java
-        debug("${hello[0]}, size=${hello.length}")
+//    private fun runStringExample() {
+//        val hello = "Hello world" // use constant pool of java
+//        debug("${hello[0]}, size=${hello.length}")
+//
+//        val helloChars = Array("Hello".length + 1) { ' ' }
+//        helloChars[0] = 'H'
+//        helloChars[1] = 'E'
+//        helloChars[2] = 'L'
+//        helloChars[3] = 'L'
+//        helloChars[4] = 'O'
+//        helloChars.forEachIndexed { i, e -> debug("helloChard[$i] = $e") }
+//
+//        debug(hello.substring(0..3))
+//
+//        val builder = StringBuilder("Hello")
+//        builder.append("World") // HelloWorld
+//        builder.insert(10, "Added") //HelloWorldAdded
+//        builder.delete(5, 10) // HelloAdded
+//        debug("output: $builder")
 
-        val helloChars = Array("Hello".length + 1) { ' ' }
-        helloChars[0] = 'H'
-        helloChars[1] = 'E'
-        helloChars[2] = 'L'
-        helloChars[3] = 'L'
-        helloChars[4] = 'O'
-        helloChars.forEachIndexed { i, e -> debug("helloChard[$i] = $e") }
-
-        debug(hello.substring(0..3))
-
-        val builder = StringBuilder("Hello")
-        builder.append("World") // HelloWorld
-        builder.insert(10, "Added") //HelloWorldAdded
-        builder.delete(5, 10) // HelloAdded
-        debug("output: $builder")
-    }
+//        val deli = "Welcome to Kotlin"
+//        val sp = deli.split(" ")
+//        sp.forEach { e -> debug(e) }
+//
+//        val numList:MutableList<Number> = mutableListOf()
+//        numList.add(10)
+//        numList.add(5.5)
+//        numList.forEach { e -> debug("$e") }
+//    }
 
 //    private fun runArraySimpleExample() {
 //        val b = Array<Any>(10) { 0 }
