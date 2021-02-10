@@ -31,12 +31,25 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runSetMapExample()
     }
 
-    private fun runSetMapExample() {
-
-    }
+//    private fun runSetMapExample() {
+//        val mixedTypeSet = setOf("Hello", 5, "world", 3.14, 'c')
+//        val intSet: Set<Int> = setOf(1, 5, 5)
+//
+//        debug("$mixedTypeSet")
+//        debug("$intSet")
+//
+//        val animals = mutableSetOf("Lion", "Dog", "Cat", "Python", "Hippo")
+//        debug("$animals")
+//
+//        animals.add("Dog")
+//        debug("$animals")
+//
+//        animals.remove("Python")
+//        debug("$animals")
+//
+//    }
 
 //    private fun runArrayListExample() {
 //        val list1: List<Int> = LinkedList()
