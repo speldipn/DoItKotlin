@@ -11,6 +11,7 @@ import java.util.*
 import java.util.jar.Attributes
 import kotlin.Comparator
 import kotlin.collections.ArrayList
+import kotlin.collections.LinkedHashSet
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runLinkedSetExample() {
+//        val intsLinkedHashSet: LinkedHashSet<Int> = linkedSetOf(35, 21, 76, 26, 75)
+//        intsLinkedHashSet.add(4)
+//        intsLinkedHashSet.remove(21)
+//        debug("$intsLinkedHashSet")
+//
+//        intsLinkedHashSet.clear()
+//        debug("$intsLinkedHashSet")
+//    }
 
 //    private fun runTreeSetExample() {
 //        val intsSortedSet: TreeSet<Int> = sortedSetOf(4, 1, 7, 2)
