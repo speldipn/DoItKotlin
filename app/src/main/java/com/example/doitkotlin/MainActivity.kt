@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private fun runStringExample() {
         val hello = "Hello world" // use constant pool of java
         debug("${hello[0]}, size=${hello.length}")
+
         val helloChars = Array("Hello".length + 1) { ' ' }
         helloChars[0] = 'H'
         helloChars[1] = 'E'
@@ -44,6 +45,13 @@ class MainActivity : AppCompatActivity() {
         helloChars[4] = 'O'
         helloChars.forEachIndexed { i, e -> debug("helloChard[$i] = $e") }
 
+        debug(hello.substring(0..3))
+
+        val builder = StringBuilder("Hello")
+        builder.append("World") // HelloWorld
+        builder.insert(10, "Added") //HelloWorldAdded
+        builder.delete(5, 10) // HelloAdded
+        debug("output: $builder")
     }
 
 //    private fun runArraySimpleExample() {
