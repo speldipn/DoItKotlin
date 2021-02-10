@@ -32,8 +32,18 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runCollectionPracticeExample() {
+//        val hashMap: HashMap<Int, String> = hashMapOf(1 to "Hello", 2 to "World")
+//        debug("hasMap = $hashMap")
+//
+//        val sortedMap: SortedMap<Int, String> = sortedMapOf(1 to "Apple", 2 to "Banana")
+//        debug("sortedMap = $sortedMap")
+//
+//        val linkedHash: LinkedHashMap<Int, String> = linkedMapOf(1 to "Computer", 2 to "Mouse")
+//        debug("linkedHash = $linkedHash")
+//    }
 
 //    private fun runMapExample() {
 //        val langMap: Map<Int, String> = mapOf(11 to "Java", 22 to "Kotlin", 33 to "C++", 11 to "aa")
