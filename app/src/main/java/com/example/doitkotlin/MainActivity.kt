@@ -30,6 +30,19 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runStringExample()
+    }
+
+    private fun runStringExample() {
+        val hello = "Hello world" // use constant pool of java
+        debug("${hello[0]}, size=${hello.length}")
+        val helloChars = Array("Hello".length + 1) { ' ' }
+        helloChars[0] = 'H'
+        helloChars[1] = 'E'
+        helloChars[2] = 'L'
+        helloChars[3] = 'L'
+        helloChars[4] = 'O'
+        helloChars.forEachIndexed { i, e -> debug("helloChard[$i] = $e") }
 
     }
 
@@ -41,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 //        debug("${b[1]}")
 //        debug("${b[2]}")
 
-        //        val arr = arrayOf(1, 2, 3, 4, 5)
+    //        val arr = arrayOf(1, 2, 3, 4, 5)
 //        arr.forEach { num -> debug("$num") }
 //        debug("====================")
 //        arr.forEachIndexed { i, e -> debug("arr[$i] = $e") }
@@ -91,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 //        products.forEach { e -> debug("$e") }
 
 
-        // sort with example
+    // sort with example
 //        products.sortWith( Comparator { p1, p2 ->
 //            when {
 //                p1.price > p2.price -> 1
