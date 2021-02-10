@@ -30,16 +30,41 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runCollectionExample()
+
     }
 
-    private fun runCollectionExample() {
-        val fruits = listOf("apple", "banana", "kiwi")
-
-        for(index in fruits.indices) {
-            debug("fruits[$index] = ${fruits[index]}")
-        }
-    }
+//    private fun runCollectionExample() {
+//        val fruits = listOf("apple", "banana", "kiwi")
+//
+//        for(index in fruits.indices) {
+//            debug("fruits[$index] = ${fruits[index]}")
+//        }
+//
+//        // empty collection
+//        val emptyList: List<String> = emptyList()
+//
+//        // listOfNotNull
+//        val nonNullsList: List<Int> = listOfNotNull(2, 45, 2, null, 5, null)
+//        debug("$nonNullsList")
+//
+//        val mutableList: MutableList<String> = mutableListOf("Kildong", "Neo", "Dooly")
+//        mutableList.add("Ben")
+//        debug("add, $mutableList")
+//
+//        mutableList.removeAt(1)
+//        debug("removeAt(1), $mutableList")
+//
+//        mutableList[0] = "Sean"
+//        debug("0 changed, $mutableList")
+//
+//        val mutableListMixed = mutableListOf("Android", "Apple", 5, 6, 'X')
+//        debug("mixed, $mutableListMixed")
+//
+//        val sampleList = listOf("aaaa", "bbbb", "cccc")
+//        val toMutableList = sampleList.toMutableList()
+//        toMutableList.removeAt(1)
+//        debug("$toMutableList")
+//    }
 
 //    private fun runStringTrimExample() {
 //        val text = """ |Tell me and I forget.
