@@ -10,6 +10,7 @@ import java.lang.reflect.Member
 import java.util.*
 import java.util.jar.Attributes
 import kotlin.Comparator
+import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,8 +31,17 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runSetMapExample()
+    }
+
+    private fun runSetMapExample() {
 
     }
+
+//    private fun runArrayListExample() {
+//        val list1: List<Int> = LinkedList()
+//        val list2: List<Int> = ArrayList()
+//    }
 
 //    private fun runCollectionExample() {
 //        val fruits = listOf("apple", "banana", "kiwi")
