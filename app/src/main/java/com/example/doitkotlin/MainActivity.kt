@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runArraySimpleExample()
+
     }
 
-    private fun runArraySimpleExample() {
+//    private fun runArraySimpleExample() {
 //        val b = Array<Any>(10) { 0 }
 //        b[0] = "Hello World"
 //        b[1] = 1.1
@@ -69,21 +69,21 @@ class MainActivity : AppCompatActivity() {
 //        debug(items.contentToString())
 //
 //        debug("====================products")
-        data class Product(val name: String, val price: Double) : Comparable<Product> {
-            override fun compareTo(other: Product): Int {
-                return price.toInt() - other.price.toInt()
-            }
-        }
-
-        val products = arrayOf(
-            Product("Snow Ball", 870.00),
-            Product("Smart Phone", 999.00),
-            Product("Drone", 240.00),
-            Product("Mouse", 333.55),
-            Product("Keyboard", 125.99),
-            Product("Monitor", 1500.99),
-            Product("Tablet", 512.99),
-        )
+//        data class Product(val name: String, val price: Double) : Comparable<Product> {
+//            override fun compareTo(other: Product): Int {
+//                return price.toInt() - other.price.toInt()
+//            }
+//        }
+//
+//        val products = arrayOf(
+//            Product("Snow Ball", 870.00),
+//            Product("Smart Phone", 999.00),
+//            Product("Drone", 240.00),
+//            Product("Mouse", 333.55),
+//            Product("Keyboard", 125.99),
+//            Product("Monitor", 1500.99),
+//            Product("Tablet", 512.99),
+//        )
 
 //        products.sortBy { e -> e.price }
 //        products.sort()
@@ -102,27 +102,27 @@ class MainActivity : AppCompatActivity() {
 //        products.sortWith(compareBy({it.name}, {it.price}))
 //        products.forEach { e -> debug("$e") }
 
-        val arr = arrayOf(1, -1, 3, 4, -5, 0)
-        arr.filter { e -> e > 0 }.forEach { e -> debug("$e") }
-
-        val fruits = arrayOf("banana", "avocado", "apple", "kiwi")
-        fruits.filter { it.startsWith("a") }
-            .sortedBy { it }
-            .map { it.toUpperCase() }
-            .forEach { debug(it) }
-
-        debug("${products.minBy { it.price }}")
-        debug("${products.maxBy { it.price }}")
-
-        val numbers = arrayOf(1, 2, 3)
-        val strs = arrayOf("one", "two", "three")
-        val simpleArray = arrayOf(numbers, strs)
-        simpleArray.forEach { debug("$it") }
-
-        val flattenSimpleArray = simpleArray.flatten()
-        debug("$flattenSimpleArray")
-
-    }
+//        val arr = arrayOf(1, -1, 3, 4, -5, 0)
+//        arr.filter { e -> e > 0 }.forEach { e -> debug("$e") }
+//
+//        val fruits = arrayOf("banana", "avocado", "apple", "kiwi")
+//        fruits.filter { it.startsWith("a") }
+//            .sortedBy { it }
+//            .map { it.toUpperCase() }
+//            .forEach { debug(it) }
+//
+//        debug("${products.minBy { it.price }}")
+//        debug("${products.maxBy { it.price }}")
+//
+//        val numbers = arrayOf(1, 2, 3)
+//        val strs = arrayOf("one", "two", "three")
+//        val simpleArray = arrayOf(numbers, strs)
+//        simpleArray.forEach { debug("$it") }
+//
+//        val flattenSimpleArray = simpleArray.flatten()
+//        debug("$flattenSimpleArray")
+//
+//    }
 
 //    private fun runArrayClassExample() {
 //        val arr = Array(5) { i -> i * 2 }
