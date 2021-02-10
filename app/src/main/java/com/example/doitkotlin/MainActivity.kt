@@ -32,8 +32,17 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runCollectionNoneExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//
+//        debug("none: ${list.none()}")
+//        debug("none: ${list.none { it > 5 }}")
+//
+//        debug("${list.isEmpty()}")
+//        debug("${list.isNotEmpty()}")
+//    }
 
 //    private fun runCollectionExtensionValidationExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
