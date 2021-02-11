@@ -32,7 +32,29 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runComponentMappingExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listWithNull = listOf(1, null, 3, null, 5, 6)
+//        debug("${list.map { it * 2 }}")
+//
+//        val mapIndexed = list.mapIndexed { index, value -> index * value }
+//        debug("$mapIndexed")
+//
+//        debug("${listWithNull.mapNotNull { it?.times(2) }}")
+//
+//        debug("${list.flatMap { listOf(it, 'A') }}")
+//
+//        val result = listOf("abc", "12").flatMap { it.toList() }
+//        debug("$result")
+//
+//        val grpMap = list.groupBy { if (it % 2 == 0) "even" else "odd" }
+//        debug("$grpMap")
+//        debug("${grpMap["even"]}")
+//        debug("${grpMap.get("odd")}")
+//    }
 
 //    private fun runComponentExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
