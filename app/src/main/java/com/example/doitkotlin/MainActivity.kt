@@ -36,6 +36,34 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runCollectionMerge() {
+//        val list1 = listOf(1, 2, 3, 4, 5, 6)
+//        val list2 = listOf(2, 2, 3, 4, 5, 5, 6, 7)
+//
+//        debug("list1.union(list2): ${list1.union(list2)}")
+//        debug("list1.plus(list2): ${list1.plus(list2)}")
+//
+//        val part = list1.partition { it % 2 == 0 }
+//        debug("$part")
+//        debug("${part.first}")
+//        debug("${part.second}")
+//
+//        val partOne = part.first
+//        val partTwo = part.second
+//
+//        val partMerged = partOne.plus(partTwo)
+//        debug("$partMerged")
+//
+//        val zip = list1.zip(listOf(7, 8))
+//        debug("$zip")
+//
+//        val zipOne = zip[0]
+//        debug("${zipOne.first} ${zipOne.second}")
+//
+//        val zipTwo = zip[1]
+//        debug("${zipTwo.first} ${zipTwo.second}")
+//    }
+
 //    private fun runSearchExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
 //        debug("binarySearch: ${list.binarySearch(3)}")
