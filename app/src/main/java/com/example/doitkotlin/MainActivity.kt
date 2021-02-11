@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import java.lang.Exception
 import java.lang.reflect.Member
 import java.util.*
 import java.util.jar.Attributes
@@ -34,6 +35,28 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
 
     }
+
+//    private fun runElementSearchExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listPair = listOf(Pair("A", 300), Pair("B", 200), Pair("C", 100))
+//        val listRepeated = listOf(2, 2, 3, 4, 5, 5, 6)
+//
+//        debug("elementAt: ${list.elementAt(1)}") // 2
+//
+//        debug("elementAtOrElse: ${list.elementAtOrElse(11) { it / 2 }}")
+//
+//        debug("elementAtOrNull: ${list.elementAtOrNull(10)}")
+//
+//        try {
+//            debug("first: ${listPair.first { it.second == 100 }}")
+//            debug("last: ${listPair.last { it.second == 500 }}")
+//        } catch (e: Exception) {
+//            debug("${e.message}")
+//        }
+//
+//        debug("firstOrNull: ${listPair.firstOrNull { it.first == "E" }}")
+//        debug("lastOrNull: ${listPair.lastOrNull { it.first == "E" }}")
+//    }
 
 //    private fun runComponentMappingExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
