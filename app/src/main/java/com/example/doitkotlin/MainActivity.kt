@@ -33,7 +33,15 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runSearchExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        debug("binarySearch: ${list.binarySearch(3)}")
+//        debug("find { it > 3 }: ${list.find { it > 3 }}")
+//        debug("find { it > 1 }: ${list.find { it > 1 }}")
+//    }
 
 //    private fun runListIndexExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
