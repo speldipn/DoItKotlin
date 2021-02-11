@@ -32,8 +32,15 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runComponentExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listRepeated = listOf(2, 3, 3, 4, 5, 5, 6)
+//        debug("component1(): ${list.component1()}")
+//        debug("distinct: ${listRepeated.distinct()}")
+//        debug("intersect: ${list.intersect(listOf(5, 6, 7, 8))}")
+//    }
 
 //    private fun runListPracticeExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
