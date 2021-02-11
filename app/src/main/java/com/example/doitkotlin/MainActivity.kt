@@ -33,7 +33,24 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runFibonacciUsingSequence() {
+//        val fibonacci = generateSequence(1 to 1) { it.second to it.first + it.second }
+//            .map { it.first }
+//        debug("${fibonacci.take(10).toList()}")
+//    }
+//
+//    private fun runPrimeUsingSequence() {
+//        val primes = generateSequence(2 to generateSequence(3) { it + 2 }) {
+//            val currSeq = it.second.iterator()
+//            val nextPrime = currSeq.next()
+//            nextPrime to currSeq.asSequence().filter { it % nextPrime != 0 }
+//        }.map { it.first }
+//        debug("${primes.take(10).toList()}")
+//
+//    }
 
 //    private fun runMethodChaningExample() {
 //        val list1 = listOf(1, 2, 3, 4, 5)
