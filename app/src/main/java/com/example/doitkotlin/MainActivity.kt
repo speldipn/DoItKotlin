@@ -36,6 +36,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runSequenceExample() {
+//        val nums: Sequence<Int> = generateSequence(1) { it + 1 }
+//        debug("${nums.take(10).toList()}")
+//
+//        val squares = generateSequence(1) { it + 1}.map{ it * it }
+//        debug("${squares.take(10).toList()}")
+//
+//        val oddSquares = squares.filter { it % 2 != 0 }
+//        debug("${oddSquares.take(3).toList()}")
+//    }
+
 //    private fun runSortedExampled() {
 //        val unsortedList = listOf(3, 2, 7, 5)
 //        debug("${unsortedList.reversed()}") //  5 7 2 3
