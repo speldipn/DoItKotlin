@@ -36,6 +36,21 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun runCloserExample() {
+
+    }
+
+//    private fun runKotlinStandardExample() {
+//        val calc = Calc()
+//        var result = 0
+//        calc.addNum(10, 20) { a, b -> result = a + b }
+//        debug("result: $result")
+//    }
+
+    class Calc {
+        fun addNum(a: Int, b: Int, add: (Int, Int) -> Unit) = add(a, b)
+    }
+
 //    private fun runFibonacciUsingSequence() {
 //        val fibonacci = generateSequence(1 to 1) { it.second to it.first + it.second }
 //            .map { it.first }
