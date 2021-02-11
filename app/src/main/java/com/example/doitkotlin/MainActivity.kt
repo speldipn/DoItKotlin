@@ -33,8 +33,28 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runListIndexExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listPair = listOf(Pair("A", 300), Pair("B", 200), Pair("C", 100))
+//        val listRepeated = listOf(2, 2, 3, 4, 5, 5, 6)
+//
+//        debug("indexOf: ${list.indexOf(4)}")
+//        debug("indexOfFirst: ${list.indexOfFirst { it % 2 == 0 }}")
+//        debug("lastIndexOf: ${listRepeated.lastIndexOf(5)}")
+//        debug("indexOfLast: ${list.indexOfLast { it % 2 == 0 }}")
+//
+//        debug("$listPair")
+//
+//        try {
+//            debug("single: ${listPair.single { it.second == 100 }}")
+//        } catch (e: Exception) {
+//            debug("${e.message}")
+//        }
+//
+//        debug("singleOrNull: ${listPair.singleOrNull { it.second == 500 }}")
+//    }
 
 //    private fun runElementSearchExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
