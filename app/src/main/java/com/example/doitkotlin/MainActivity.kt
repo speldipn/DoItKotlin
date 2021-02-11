@@ -36,6 +36,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runSortedExampled() {
+//        val unsortedList = listOf(3, 2, 7, 5)
+//        debug("${unsortedList.reversed()}") //  5 7 2 3
+//
+//        debug("${unsortedList.sorted()}") // 2 3 5 7
+//
+//        debug("${unsortedList.sortedDescending()}") // 7 5 3 2
+//
+//        debug("${unsortedList.sortedBy { it % 3 }}") // 3 7 2 5
+//        debug("${unsortedList.sortedByDescending { it % 3 }}")  // 2 5 7 3
+//    }
+
 //    private fun runCollectionMerge() {
 //        val list1 = listOf(1, 2, 3, 4, 5, 6)
 //        val list2 = listOf(2, 2, 3, 4, 5, 5, 6, 7)
