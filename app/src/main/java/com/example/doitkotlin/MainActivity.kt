@@ -33,21 +33,20 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runMethodChaningExample()
     }
 
-    private fun runMethodChaningExample() {
-        val list1 = listOf(1, 2, 3, 4, 5)
-        val listDefault = list1.map { debug("map($it)"); it * it }
-            .filter { debug("filter($it)"); it % 2 == 0 }
-        debug("$listDefault")
-
-        val listSeq = list1.asSequence()
-            .map { debug("map($it)"); it * it }
-            .filter { debug("filter($it)"); it % 2 == 0 }
-            .toList()
-        debug("$listSeq")
-    }
+//    private fun runMethodChaningExample() {
+//        val list1 = listOf(1, 2, 3, 4, 5)
+//        val listDefault = list1.map { debug("map($it)"); it * it }
+//            .filter { debug("filter($it)"); it % 2 == 0 }
+//        debug("$listDefault")
+//
+//        val listSeq = list1.asSequence()
+//            .map { debug("map($it)"); it * it }
+//            .filter { debug("filter($it)"); it % 2 == 0 }
+//            .toList()
+//        debug("$listSeq")
+//    }
 
 //    private fun runSequenceExample() {
 //        val nums: Sequence<Int> = generateSequence(1) { it + 1 }
