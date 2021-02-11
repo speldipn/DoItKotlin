@@ -32,7 +32,43 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runListPracticeExample() {
+//        val list = listOf(1, 2, 3, 4, 5, 6)
+//        val listMixed = listOf(1, "Hello", 3, "World", 5, 'A')
+//        val listWithNull = listOf(1, null, 3, null, 5, 6)
+//        val listRepeated = listOf(2, 3, 3, 4, 5, 5, 6)
+//        val map = mapOf(11 to "Java", 22 to "Kotlin", 33 to "C++")
+//
+//        debug("${list.filter { it % 2 == 0 }}")
+//        debug("${list.filterNot { it % 2 == 0 }}")
+//        debug("${listWithNull.filterNotNull()}")
+//
+//        debug("filteredIndexed:  ${list.filterIndexed { idx, value -> idx != 1 && value % 2 == 0 }}")
+//        val mutList =
+//            list.filterIndexedTo(mutableListOf()) { idx, value -> idx != 1 && value % 2 == 0 }
+//        debug("filteredIndexedTo: $mutList")
+//
+//        debug("filterKeys: ${map.filterKeys { it != 11 }}")
+//        debug("filterValues: ${map.filterValues { it == "Java" }}")
+//
+//        debug("filterIsInstance: ${listMixed.filterIsInstance<String>()}")
+//        debug("filterIsInstance: ${listMixed.filterIsInstance<Int>()}")
+//
+//        debug("slice: ${list.slice(listOf(0, 2))}") // 1, 3
+//        debug("slide: ${list.slice(2..3)}") // 3, 4
+//
+//        debug("list.take(2): ${list.take(2)}")
+//        debug("list.takeLast(2): ${list.takeLast(2)}")
+//        debug("list.takeWhile { it < 3 }: ${list.takeWhile { it < 3 }}")
+//
+//        debug("list.drop(3): ${list.drop(3)}")
+//        debug("list.dropWhile { it < 3 }: ${list.dropWhile { it < 3 }}")
+//        debug("list.dropLastWhile { it > 3 }: ${list.dropLastWhile { it > 3 }}")
+//
+//    }
 
 //    private fun runCollectionNoneExample() {
 //        val list = listOf(1, 2, 3, 4, 5, 6)
