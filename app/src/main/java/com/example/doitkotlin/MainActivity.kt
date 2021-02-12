@@ -34,7 +34,23 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runWithExample() {
+//        data class User(val name: String, var skills: String, var email: String? = null)
+//
+//        val user = User("Kildong", "default")
+//        debug("user: $user")
+//
+//        val result = with(user) {
+//            skills = "Kotlin"
+//            email = "kildong@example.com"
+//            "success"
+//        }
+//        debug("user: $user")
+//        debug("result: $result")
+//    }
 
 //    private fun runRunExample() {
 //        var skills = "Kotlin"
