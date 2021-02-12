@@ -37,6 +37,31 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runApplyExample() {
+//        data class Person(var name: String, var skills: String)
+//
+//        val person = Person("Kildong", "Kotlin")
+//        person.apply { this.skills = "Swift" }
+//
+//        val returnObj = person.apply {
+//            name = "Sean"
+//            skills = "Java"
+//        }
+//
+//        debug("person: $person")
+//        debug("returnObj: $returnObj")
+//        debug("person: $person")
+//
+//        fun makeDir(path: String): File {
+////            # case 1
+////            val result = File(path)
+////            result.mkdirs()
+////            return result
+////            # case 2
+//            return File(path).apply { mkdirs() }
+//        }
+//    }
+
 //    private fun runLetAndAlsoExample() {
 //        fun makeDir(path: String): File {
 //            val result = File(path)
