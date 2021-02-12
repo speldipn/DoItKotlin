@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import java.io.File
+import java.io.FileOutputStream
+import java.io.PrintWriter
 import java.lang.Exception
 import java.lang.reflect.Member
 import java.util.*
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
 
     }
+
+//    private fun runUseExample() {
+//        PrintWriter(FileOutputStream("")).use { it.println("Hello") }
+//    }
 
 //    private fun runWithExample() {
 //        data class User(val name: String, var skills: String, var email: String? = null)
