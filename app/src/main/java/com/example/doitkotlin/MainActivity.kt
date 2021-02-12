@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import java.io.File
 import java.lang.Exception
 import java.lang.reflect.Member
 import java.util.*
@@ -35,6 +36,16 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
 
     }
+
+//    private fun runLetAndAlsoExample() {
+//        fun makeDir(path: String): File {
+//            val result = File(path)
+//            result.mkdirs()
+//            return result
+//        }
+//
+//        fun makeDir1(path: String) = path.let { File(it) }.also { it.mkdirs() }
+//    }
 
 //    private fun runKotlinExtensionExample() {
 //        // let
