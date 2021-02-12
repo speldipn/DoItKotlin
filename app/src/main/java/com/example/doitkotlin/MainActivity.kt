@@ -34,8 +34,39 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runRunExample() {
+//        var skills = "Kotlin"
+//        debug(skills)
+//
+//        val a = 10
+//        skills = run {
+//            var level = "Kotlin Levle: " + a
+//            level
+//        }
+//
+//        data class Person(var name: String, var skills: String)
+//        val person = Person("Kildong", "Kotlin")
+//        debug("person: $person")
+//
+//        val returnObj = person.apply {
+//            this.name = "Sean"
+//            this.skills = "Java"
+//            "success"
+//        }
+//        debug("returnObj: $returnObj")
+//
+//        val returnObj2 = person.run {
+//            this.name = "Dooly"
+//            this.skills = "C#"
+//            "success"
+//        }
+//        debug("returnObj2: $returnObj2")
+//
+//        debug("person == returnObj: ${person == returnObj}")
+//        debug("person === returnObj: ${person === returnObj}")
+//    }
 
 //    private fun runApplyExample() {
 //        data class Person(var name: String, var skills: String)
