@@ -36,9 +36,66 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun runCloserExample() {
-
-    }
+//    private fun runKotlinExtensionExample() {
+//        // let
+//        val score: Int? = 32
+//        // var score = null
+//
+//        fun checkScore() {
+//            if (score != null) {
+//                debug("Score: $score")
+//            }
+//            score?.let {
+//                debug("checkScore $it")
+//            }
+//        }
+//
+//        fun checkScoreLet() {
+//            score?.let { debug("checkScoreLet1: $it") }
+//            val str = score.let { it.toString() }
+//            debug("checkScoreLet2: $str")
+//        }
+//
+//        fun letTestFunc() {
+//            val a: Int? = null
+//            val b = 2
+//            val result = a.let { it?.plus(b) }.let { it?.plus(it) }
+//            debug("$result")
+//        }
+//
+//        fun alsoTestFunc() {
+//            var m = 1
+//            m = m.also { m.plus(10) }
+//            debug("$m")
+//        }
+//
+//        fun letAndAlsoTestFunc() {
+//            data class Person (val name: String, var skills: String)
+//            var person = Person("Kildong", "Kotlin")
+//            val a = person.let {
+//                it.skills = "Android"
+//                "success"
+//            }
+//            debug("$person") // Kildong, Android
+//            debug("a: $a") // success
+//            val b = person.also {
+//                it.skills = "Java"
+//                "success"
+//            }
+//            debug("$person") // Kildong, Java
+//            debug("b: $b") // success
+//        }
+//
+//        checkScore()
+//        debug("==============")
+//        checkScoreLet()
+//        debug("==============")
+//        letTestFunc()
+//        debug("==============")
+//        alsoTestFunc()
+//        debug("==============")
+//        letAndAlsoTestFunc()
+//    }
 
 //    private fun runKotlinStandardExample() {
 //        val calc = Calc()
@@ -47,9 +104,9 @@ class MainActivity : AppCompatActivity() {
 //        debug("result: $result")
 //    }
 
-    class Calc {
-        fun addNum(a: Int, b: Int, add: (Int, Int) -> Unit) = add(a, b)
-    }
+//    class Calc {
+//        fun addNum(a: Int, b: Int, add: (Int, Int) -> Unit) = add(a, b)
+//    }
 
 //    private fun runFibonacciUsingSequence() {
 //        val fibonacci = generateSequence(1 to 1) { it.second to it.first + it.second }
