@@ -36,6 +36,27 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runThreadStartExample() {
+//        class SimpleThread: Thread() {
+//            override fun run() {
+//                debug("Current Threads: ${currentThread()}")
+//            }
+//        }
+//
+//        class SimpleRunnable: Runnable {
+//            override fun run() {
+//                debug("Current Thread: ${Thread.currentThread()}")
+//            }
+//        }
+//
+//        val thread = SimpleThread()
+//        thread.start()
+//
+//        val runnable = SimpleRunnable()
+//        val thread1 = Thread(runnable)
+//        thread1.start()
+//    }
+
 //    private fun runChapterTenExample() {
 //        // 1.
 //        val property: Int? = 42
