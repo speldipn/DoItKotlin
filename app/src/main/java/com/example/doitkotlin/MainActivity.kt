@@ -6,16 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import java.io.File
-import java.io.FileOutputStream
-import java.io.PrintWriter
-import java.lang.Exception
-import java.lang.reflect.Member
 import java.util.*
-import java.util.jar.Attributes
-import kotlin.Comparator
-import kotlin.collections.ArrayList
-import kotlin.collections.LinkedHashSet
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,8 +27,16 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runRandomExample() {
+//        val count = 20
+//        val nums = mutableListOf<Int>()
+//        for (index in 0..count - 1) {
+//            nums.add(Random().nextInt(10))
+//        }
+//        debug("$nums")
+//    }
 
 //    private fun runTakeIfExample() {
 //        fun doThis() = debug("doThis called")
