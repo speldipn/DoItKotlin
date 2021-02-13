@@ -39,6 +39,30 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runTakeIfExample() {
+//        fun doThis() = debug("doThis called")
+//        data class User(val name: String, var skills: String, var email: String? = null)
+//
+//        var user: User? = null
+//        user = User("Neo", "Android", "neo@gmail.com")
+//        if (user != null && user.email != null) {
+//            doThis()
+//        }
+//        if (user?.email != null) {
+//            doThis()
+//        }
+//        user?.takeIf { it.email != null }?.apply { doThis() }
+//
+//        val input = "Kotlin"
+//        val keyword = "in"
+//
+//        input.indexOf(keyword).takeIf { it >= 0 }.apply { debug("$keyword indexOf: $this") }
+//            ?: debug("keyword not found")
+//
+//        input.indexOf(keyword).takeUnless { it < 0 }.apply { debug("$keyword indexOf: $this") }
+//            ?: debug("keyword not found")
+//    }
+
 //    private fun runUseExample() {
 //        PrintWriter(FileOutputStream("")).use { it.println("Hello") }
 //    }
@@ -2146,8 +2170,9 @@ class MainActivity : AppCompatActivity() {
 //        debug("Double min: ${Double.MIN_VALUE} max: ${Double.MAX_VALUE}")
 //    }
 //
+    var count = 0
     private fun debug(msg: String) {
-        Log.d(TAG, msg)
+        Log.d(TAG, "${count++}: $msg")
     }
 
 //    inner class Person(val name: String) {
