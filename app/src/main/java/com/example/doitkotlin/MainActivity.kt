@@ -27,7 +27,35 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runDSLExample() {
+//        data class Job(
+//            var cateogry: String? = null,
+//            var position: String? = null,
+//            var extension: Int? = null
+//        )
+//
+//        data class Person(
+//            var name: String? = null,
+//            var age: Int? = null,
+//            var job: Job? = null
+//        )
+//
+//        fun person(block: (Person) -> Unit): Person {
+//            val p = Person()
+//            block(p)
+//            return p
+//        }
+//
+//        val person = person {
+//            it.name = "Neo"
+//            it.age = 34
+//        }
+//
+//        debug("$person")
+//    }
 
 //    private fun runRandomExample() {
 //        val count = 20
