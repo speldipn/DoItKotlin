@@ -13,6 +13,8 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
 import java.util.*
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,8 +35,19 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runThreadExample3() {
+//        val myService:ExecutorService = Executors.newFixedThreadPool(8)
+//        val list = listOf(1, 2, 3, 4, 5, 6, 7, 8)
+//        val items = list.map { "$it thread.." }
+//        fun processItem(item: String) { debug("$item")}
+//        for(index in 0 until 8) {
+//            myService.submit {
+//                processItem(items[index])
+//            }
+//        }
+//    }
 
 //    private fun runThreadExample2() {
 //        object : Thread() {
