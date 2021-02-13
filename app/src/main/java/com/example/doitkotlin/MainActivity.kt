@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
@@ -34,6 +35,24 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
 
     }
+
+//    private fun runChapterTenExample() {
+//        // 1.
+//        val property: Int? = 42
+//        fun someMethod() {
+//            property?.let { debug("someMehtod: $it") }
+//        }
+//        someMethod()
+//        // 2.
+//        data class Person(var name: String, var age: Int)
+//        val person = Person().apply {
+//            name = "Killdong"
+//            age = 30
+//        }
+//        debug("$person")
+//
+//        // 3. Occur null pointer exception
+//    }
 
 //    private fun runFileExample() {
 //        val path = ""
