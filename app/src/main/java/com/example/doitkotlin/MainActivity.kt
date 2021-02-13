@@ -36,6 +36,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    private fun runThreadExample2() {
+//        object : Thread() {
+//            override fun run() {
+//                debug("Current Thread: ${Thread.currentThread()}")
+//            }
+//        }.start()
+//
+//        Runnable { debug("Current Thread: ${Thread.currentThread()}") }.run()
+//
+//        Thread { debug("Current Thread: ${Thread.currentThread()}") }.start()
+//    }
+
 //    private fun runThreadStartExample() {
 //        class SimpleThread: Thread() {
 //            override fun run() {
