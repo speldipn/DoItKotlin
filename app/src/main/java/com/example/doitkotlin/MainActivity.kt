@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +26,31 @@ class MainActivity : AppCompatActivity() {
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
     }
+
+//    private fun runCoroutinesExample5() {
+////        val doWork1: () -> String = { "Work1" }
+////        val doWork2: () -> String = { "Work2" }
+////        suspend fun doWork1() = "Work1"
+////        suspend fun doWork2() = "Work2"
+//        val doWork1 = { "Work1" }
+//        val doWork2 = { "Work2" }
+//
+//        val one = GlobalScope.async {
+//            debug("one: ${Thread.currentThread()}")
+//            doWork1()
+//        }
+//
+//        val two = GlobalScope.async {
+//            debug("two: ${Thread.currentThread()}")
+//            doWork2()
+//        }
+//
+//        GlobalScope.launch {
+//            val combined = "${one.await()}_${two.await()}"
+//            debug("Kotlin combined: $combined")
+//            debug("Main: ${Thread.currentThread()}")
+//        }
+//    }
 
 //    private fun runCoroutinesExample4() {
 //        suspend fun doWork1(): String {
