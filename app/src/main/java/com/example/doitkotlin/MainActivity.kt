@@ -26,7 +26,19 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runAsyncExample2() {
+//        runBlocking {
+//            val jobs =  List(100_000) {
+//                launch {
+//                    delay(1000L)
+//                    debug(".")
+//                }
+//            }
+//            jobs.forEach { it.join() }
+//    }
 
 //    private fun runAsyncExample() {
 //        suspend fun doWork1(): String {
