@@ -27,6 +27,11 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+        runCorotinesExample4()
+    }
+
+    private fun runCorotinesExample4() {
+
     }
 
 //    private fun runCoroutinesExample2() {
