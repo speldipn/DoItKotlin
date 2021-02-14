@@ -28,6 +28,31 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
     }
 
+//    private fun runCoroutinesExample() {
+//        runBlocking {
+//            val jobs = arrayListOf<Job>()
+//            jobs += launch(Dispatchers.Unconfined) {
+//                debug("Unconfined: ${Thread.currentThread().name}")
+//            }
+//            jobs += launch(coroutineContext) {
+//                debug("coroutineContext:\t ${Thread.currentThread().name}")
+//            }
+//            jobs += launch(Dispatchers.Default) {
+//                debug("Default: ${Thread.currentThread().name}")
+//            }
+//            jobs += launch(Dispatchers.IO) {
+//                debug("IO: ${Thread.currentThread().name}")
+//            }
+//            jobs += launch {
+//                debug("main runBlocking: ${Thread.currentThread().name}")
+//            }
+//            jobs += launch(newSingleThreadContext("MyThread")) {
+//                debug("MyThread: ${Thread.currentThread().name}")
+//            }
+//            jobs.forEach { it.join() }
+//        }
+//    }
+
 //    private fun runSequenceExample() {
 //        val fibonacciSeq = sequence {
 //            var a = 0
