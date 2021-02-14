@@ -28,6 +28,27 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
     }
 
+//    private fun runRepeatExample() {
+//        runBlocking {
+//           val job = GlobalScope.launch {
+//               try {
+//                   repeat(100) { i ->
+//                       debug("I'm sleeping $i...")
+//                       delay(500L)
+//                   }
+//               } finally {
+//                   withContext(NonCancellable) {
+//                       debug("I'm running finally")
+//                       delay(1000L)
+//                   }
+//               }
+//            }
+//            delay(1300L)
+//            job.cancelAndJoin()
+//        }
+//        debug("Bye!")
+//    }
+
 //    private fun runCoroutinesExample() {
 //        runBlocking {
 //            val jobs = arrayListOf<Job>()
