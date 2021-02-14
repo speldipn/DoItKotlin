@@ -1,20 +1,12 @@
-@file:JvmName("PKLevel")
-
 package com.example.doitkotlin
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import androidx.annotation.RequiresApi
-import java.io.File
-import java.nio.file.Files
-import java.nio.file.Paths
-import java.nio.file.StandardOpenOption
-import java.util.*
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +27,20 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+
     }
+
+//    private fun runCoroutinesExample() {
+//        fun doSomething() = debug("doSomething called")
+//        GlobalScope.launch {
+//            delay(1000L)
+//            debug("World!")
+//            doSomething()
+//        }
+//        debug("Hello,")
+//        try { Thread.sleep(2000) } catch (ignored: Exception) { }
+//    }
+
 
 //    private fun runThreadExample3() {
 //        val myService:ExecutorService = Executors.newFixedThreadPool(8)
