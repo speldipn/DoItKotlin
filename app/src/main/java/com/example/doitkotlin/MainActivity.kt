@@ -27,12 +27,31 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-        runCorotinesExample4()
     }
 
-    private fun runCorotinesExample4() {
-
-    }
+//    private fun runCoroutinesExample4() {
+//        suspend fun doWork1(): String {
+//           delay(1000L)
+//            return "Work1"
+//        }
+//
+//        suspend fun doWork2(): String {
+//            delay(3000L)
+//            return "Work2"
+//        }
+//
+//        fun worksInSerial() {
+//            GlobalScope.launch {
+//                val one = doWork1()
+//                val two = doWork2()
+//                debug("Kotlin One: $one")
+//                debug("Kotlin Two: $two")
+//            }
+//        }
+//
+//        worksInSerial()
+//        debug("End of program")
+//    }
 
 //    private fun runCoroutinesExample2() {
 //        val job = GlobalScope.launch {
