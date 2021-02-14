@@ -27,6 +27,20 @@ class MainActivity : AppCompatActivity() {
     private fun setup() {
     }
 
+//    private fun runBlockingExample() {
+//        runBlocking {
+//            val job = async {
+//                delay(1000L)
+//                debug("World!")
+//            }
+//            debug("Hello")
+//            job.join()
+////            delay(2000L)
+//            debug("End of runBlocking")
+//        }
+//        debug("End of example")
+//    }
+
 //    private fun runCoroutinesExample5() {
 ////        val doWork1: () -> String = { "Work1" }
 ////        val doWork2: () -> String = { "Work2" }
