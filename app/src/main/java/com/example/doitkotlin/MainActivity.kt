@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.*
+import kotlin.system.measureTimeMillis
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,32 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
+    }
+
+//    private fun runAsyncExample() {
+//        suspend fun doWork1(): String {
+//            debug("Start doWork1")
+//            delay(1000L)
+//            debug("Done doWork1")
+//            return "Work1"
+//        }
+//
+//        suspend fun doWork2(): String {
+//            debug("Start doWork2")
+//            delay(3000L)
+//            debug("Done doWork2")
+//            return "Work2"
+//        }
+//
+//        runBlocking {
+//            val time = measureTimeMillis {
+//                val one = async(start = CoroutineStart.LAZY) { doWork1() }
+//                debug("debugging.. ")
+//                val two = async(start = CoroutineStart.LAZY) { doWork2() }
+//                debug("AWAIT: ${one.await()} _ ${two.await()}")
+//            }
+//            debug("Completed $time")
+//        }
     }
 
 //    private fun runBlockingExample() {
