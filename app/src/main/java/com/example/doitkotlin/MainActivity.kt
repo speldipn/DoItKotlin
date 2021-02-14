@@ -27,8 +27,19 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runCoroutinesExample2() {
+//        val job = GlobalScope.launch {
+//            delay(1000L)
+//            debug("World")
+//        }
+//        debug("Hello,")
+//        debug("job.isActive: ${job.isActive}, completed: ${job.isCompleted}")
+//        Thread.sleep(2000L)
+//
+//        debug("job.isActive: ${job.isActive}, completed: ${job.isCompleted}")
+//    }
 
 //    private fun runCoroutinesExample() {
 //        fun doSomething() = debug("doSomething called")
