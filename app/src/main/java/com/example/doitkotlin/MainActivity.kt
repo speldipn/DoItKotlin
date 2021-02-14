@@ -26,8 +26,18 @@ class MainActivity : AppCompatActivity() {
     // private, default, public, internal
     // DTO: Data Transfer Object(= POJO, Plain Old Java Object)
     private fun setup() {
-
     }
+
+//    private fun runRepeatExample() {
+//        runBlocking {
+//            repeat(100_000) {
+//                launch {
+//                    delay(1000L)
+//                    debug("#")
+//                }
+//            }
+//        }
+//    }
 
 //    private fun runAsyncExample2() {
 //        runBlocking {
@@ -64,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //            debug("Completed $time")
 //        }
-    }
+//    }
 
 //    private fun runBlockingExample() {
 //        runBlocking {
