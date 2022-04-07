@@ -3,11 +3,11 @@ package com.example.doitkotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.channels.produce
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.selects.select
-import kotlin.random.Random
+import kotlinx.coroutines.sync.Mutex
+import kotlin.system.measureTimeMillis
 
 
 fun _println(args: Any?) = println("${MainActivity.TAG}: ${args}")
@@ -33,22 +33,37 @@ class MainActivity : AppCompatActivity() {
     _println("time elapsed: $speed ms")
   }
 
+  val counterContext = newSingleThreadContext("CounterContext")
+  private var counter = 0
+  private var mutex = Mutex()
+
+  private suspend fun massiveRun(action: suspend () -> Unit) {
+    val n = 100
+    val k = 100
+    val time = measureTimeMillis {
+      val jobs = List(n) {
+        GlobalScope.launch {
+          repeat(k) { action() }
+        }
+      }
+      jobs.forEach { it.join() }
+    }
+    _println("Completed ${n * k} acitons in $time ms")
+  }
+
   private fun run() {
     timeElapsed {
       runBlocking {
-        val routine1 = GlobalScope.produce {
-          delay(Random(System.currentTimeMillis()).nextLong(1000))
-          send("A")
+        massiveRun {
+          try {
+            mutex.lock()
+            counter++
+            mutex.unlock()
+          } catch(e: Exception) {
+            _println("execption: $e")
+          }
         }
-        val routine2 = GlobalScope.produce {
-          delay(Random(System.currentTimeMillis()).nextLong(1000))
-          send("B")
-        }
-        val result = select<String> {
-          routine1.onReceive { result -> result }
-          routine2.onReceive { result -> result }
-        }
-        _println("Result was $result")
+        _println("Counter: ${counter}")
       }
     }
   }
