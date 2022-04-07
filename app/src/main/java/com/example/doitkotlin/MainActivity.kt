@@ -2,11 +2,12 @@ package com.example.doitkotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.consumeEach
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.channels.produce
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.selects.select
+import kotlin.random.Random
 
 
 fun _println(args: Any?) = println("${MainActivity.TAG}: ${args}")
@@ -32,19 +33,22 @@ class MainActivity : AppCompatActivity() {
     _println("time elapsed: $speed ms")
   }
 
-  fun CoroutineScope.producer(): ReceiveChannel<Int> = produce {
-    var total = 0
-    for (x in 1..5) {
-      total += x
-      send(total)
-    }
-  }
-
   private fun run() {
     timeElapsed {
       runBlocking {
-        val result = producer()
-        result.consumeEach { _println("$it") }
+        val routine1 = GlobalScope.produce {
+          delay(Random(System.currentTimeMillis()).nextLong(1000))
+          send("A")
+        }
+        val routine2 = GlobalScope.produce {
+          delay(Random(System.currentTimeMillis()).nextLong(1000))
+          send("B")
+        }
+        val result = select<String> {
+          routine1.onReceive { result -> result }
+          routine2.onReceive { result -> result }
+        }
+        _println("Result was $result")
       }
     }
   }
